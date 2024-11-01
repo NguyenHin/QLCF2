@@ -40,6 +40,7 @@
             this.btnClosing = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +160,23 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThoat.Location = new System.Drawing.Point(632, -5);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(26, 24);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Text = "X";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 640);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnClosing);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.ckbQuen);
@@ -198,5 +211,6 @@
         private System.Windows.Forms.Button btnClosing;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyHightLandsCofffe.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static QuanLyHightLandsCofffe.DAL.Entities.Model1;
 
 namespace QuanLyHightLandsCofffe
 {
@@ -66,9 +68,41 @@ namespace QuanLyHightLandsCofffe
 
         private void adminToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            // Lấy tên đăng nhập hiện tại từ UserSession
+            string currentUserName = UserSession.CurrentUserName;
+
+            // Kiểm tra xem tài khoản có phải admin không
+            if (AccountService.Instance.IsAdmin(currentUserName))
+            {
+                // Mở form quản lý nếu là admin
+                frmQuanLY f = new frmQuanLY();
+                f.ShowDialog();
+            }
+            else
+            {
+                // Thông báo nếu không phải admin
+                MessageBox.Show("Chỉ tài khoản admin mới có quyền mở chức năng này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             frmTaikhoan f = new frmTaikhoan();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void tácVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTacVu f = new frmTacVu();
+            f.ShowDialog();
+            this.Show();
+
+        }
+
+        private void frmChucNang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

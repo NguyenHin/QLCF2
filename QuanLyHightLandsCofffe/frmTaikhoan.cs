@@ -16,5 +16,12 @@ namespace QuanLyHightLandsCofffe
         {
             InitializeComponent();
         }
+
+        private void frmTaikhoan_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLHightLandsCFDataSet.TaiKhoan' table. You can move, or remove it, as needed.
+            this.taiKhoanTableAdapter.Fill(this.qLHightLandsCFDataSet.TaiKhoan);
+
+        }
     }
 }

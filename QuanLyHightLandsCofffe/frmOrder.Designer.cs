@@ -29,798 +29,838 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
-            this.tabCaffee = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonAddToCart = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
-            this.pictureBoxCoffee = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelCoffee = new System.Windows.Forms.Label();
-            this.comboBoxCoffee = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBoxTea2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTea1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTea = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBoxTea = new System.Windows.Forms.ComboBox();
-            this.numericUpDownTeaQuantity = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btncfsua = new System.Windows.Forms.Button();
+            this.btncf = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btns = new System.Windows.Forms.Button();
+            this.btnx = new System.Windows.Forms.Button();
+            this.btnth = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnCookies = new System.Windows.Forms.Button();
+            this.btnCaramel = new System.Windows.Forms.Button();
+            this.btnFreezeTra = new System.Windows.Forms.Button();
+            this.btnFreezeS = new System.Windows.Forms.Button();
+            this.btnClassic = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBoxFreeze2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFreeze1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFreeze = new System.Windows.Forms.PictureBox();
-            this.buttonAddFreezeToCart = new System.Windows.Forms.Button();
-            this.comboBoxFreeze = new System.Windows.Forms.ComboBox();
-            this.numericUpDownFreezeQuantity = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCake3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCake2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCake1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCake = new System.Windows.Forms.PictureBox();
-            this.buttonAddCakeToCart = new System.Windows.Forms.Button();
-            this.comboBoxCake = new System.Windows.Forms.ComboBox();
-            this.numericUpDownCakeQuantity = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pictureBoxCombo2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCombo1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCombo = new System.Windows.Forms.PictureBox();
-            this.buttonAddComboToCart = new System.Windows.Forms.Button();
-            this.comboBoxCombo = new System.Windows.Forms.ComboBox();
-            this.numericUpDownComboQuantity = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.listBoxCart = new System.Windows.Forms.ListBox();
-            this.tabCaffee.SuspendLayout();
+            this.button16 = new System.Windows.Forms.Button();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.lstDrinks = new System.Windows.Forms.ListBox();
+            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoffee)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTeaQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFreezeQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.panel5.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCakeQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownComboQuantity)).BeginInit();
-            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabCaffee
+            // tabControl1
             // 
-            this.tabCaffee.Controls.Add(this.tabPage1);
-            this.tabCaffee.Controls.Add(this.tabPage2);
-            this.tabCaffee.Controls.Add(this.tabPage3);
-            this.tabCaffee.Controls.Add(this.tabPage4);
-            this.tabCaffee.Controls.Add(this.tabPage5);
-            this.tabCaffee.Controls.Add(this.tabPage6);
-            this.tabCaffee.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabCaffee.Location = new System.Drawing.Point(3, 3);
-            this.tabCaffee.Name = "tabCaffee";
-            this.tabCaffee.SelectedIndex = 0;
-            this.tabCaffee.Size = new System.Drawing.Size(851, 681);
-            this.tabCaffee.TabIndex = 3;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(5, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(882, 686);
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.pictureBox2);
-            this.tabPage1.Controls.Add(this.buttonAddToCart);
-            this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.numericUpDownQuantity);
-            this.tabPage1.Controls.Add(this.pictureBoxCoffee);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.labelCoffee);
-            this.tabPage1.Controls.Add(this.comboBoxCoffee);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 49);
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(843, 628);
+            this.tabPage1.Size = new System.Drawing.Size(868, 666);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Cà Phê";
+            this.tabPage1.Text = "Cafe";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // panel4
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(561, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(207, 202);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.panel4.Location = new System.Drawing.Point(80, 664);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(585, 48);
+            this.panel4.TabIndex = 2;
             // 
-            // buttonAddToCart
+            // panel1
             // 
-            this.buttonAddToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddToCart.Location = new System.Drawing.Point(684, 587);
-            this.buttonAddToCart.Name = "buttonAddToCart";
-            this.buttonAddToCart.Size = new System.Drawing.Size(153, 35);
-            this.buttonAddToCart.TabIndex = 4;
-            this.buttonAddToCart.Text = "Thêm vào giỏ ";
-            this.buttonAddToCart.UseVisualStyleBackColor = true;
-            this.buttonAddToCart.Click += new System.EventHandler(this.buttonAddToCart_Click);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.btncfsua);
+            this.panel1.Controls.Add(this.btncf);
+            this.panel1.Location = new System.Drawing.Point(6, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(865, 662);
+            this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // panel2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(285, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 202);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Location = new System.Drawing.Point(59, 590);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(539, 49);
+            this.panel2.TabIndex = 21;
             // 
-            // numericUpDownQuantity
+            // btnUpdate
             // 
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(551, 525);
-            this.numericUpDownQuantity.Name = "numericUpDownQuantity";
-            this.numericUpDownQuantity.Size = new System.Drawing.Size(120, 34);
-            this.numericUpDownQuantity.TabIndex = 3;
+            this.btnUpdate.Location = new System.Drawing.Point(225, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(115, 46);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // pictureBoxCoffee
+            // btnDelete
             // 
-            this.pictureBoxCoffee.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCoffee.Image")));
-            this.pictureBoxCoffee.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCoffee.Name = "pictureBoxCoffee";
-            this.pictureBoxCoffee.Size = new System.Drawing.Size(188, 202);
-            this.pictureBoxCoffee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCoffee.TabIndex = 9;
-            this.pictureBoxCoffee.TabStop = false;
+            this.btnDelete.Location = new System.Drawing.Point(408, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(128, 46);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // label1
+            // btnAdd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(443, 533);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Số lượng: ";
+            this.btnAdd.Location = new System.Drawing.Point(15, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(128, 46);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label5
+            // numericUpDown1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(612, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 27);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Cappuccino";
-            // 
-            // labelCoffee
-            // 
-            this.labelCoffee.AutoSize = true;
-            this.labelCoffee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoffee.Location = new System.Drawing.Point(27, 533);
-            this.labelCoffee.Name = "labelCoffee";
-            this.labelCoffee.Size = new System.Drawing.Size(145, 18);
-            this.labelCoffee.TabIndex = 0;
-            this.labelCoffee.Text = "Chọn loại cà phê: ";
-            // 
-            // comboBoxCoffee
-            // 
-            this.comboBoxCoffee.FormattingEnabled = true;
-            this.comboBoxCoffee.Items.AddRange(new object[] {
-            "Cà phê đen",
-            "Cà phê sữa ",
-            "Espresso",
-            "Latte",
-            "Cappuccino"});
-            this.comboBoxCoffee.Location = new System.Drawing.Point(196, 524);
-            this.comboBoxCoffee.Name = "comboBoxCoffee";
-            this.comboBoxCoffee.Size = new System.Drawing.Size(205, 35);
-            this.comboBoxCoffee.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(318, 205);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 27);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Cà phê đen";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 205);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 27);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Cà phê sữa";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pictureBoxTea2);
-            this.tabPage2.Controls.Add(this.pictureBoxTea1);
-            this.tabPage2.Controls.Add(this.pictureBoxTea);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.comboBoxTea);
-            this.tabPage2.Controls.Add(this.numericUpDownTeaQuantity);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 49);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(843, 628);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Trà";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxTea2
-            // 
-            this.pictureBoxTea2.Location = new System.Drawing.Point(547, 59);
-            this.pictureBoxTea2.Name = "pictureBoxTea2";
-            this.pictureBoxTea2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxTea2.TabIndex = 7;
-            this.pictureBoxTea2.TabStop = false;
-            // 
-            // pictureBoxTea1
-            // 
-            this.pictureBoxTea1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTea1.Image")));
-            this.pictureBoxTea1.Location = new System.Drawing.Point(253, 6);
-            this.pictureBoxTea1.Name = "pictureBoxTea1";
-            this.pictureBoxTea1.Size = new System.Drawing.Size(210, 228);
-            this.pictureBoxTea1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxTea1.TabIndex = 6;
-            this.pictureBoxTea1.TabStop = false;
-            // 
-            // pictureBoxTea
-            // 
-            this.pictureBoxTea.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTea.Image")));
-            this.pictureBoxTea.Location = new System.Drawing.Point(6, 6);
-            this.pictureBoxTea.Name = "pictureBoxTea";
-            this.pictureBoxTea.Size = new System.Drawing.Size(181, 228);
-            this.pictureBoxTea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxTea.TabIndex = 5;
-            this.pictureBoxTea.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(644, 577);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 45);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thêm vào giỏ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBoxTea
-            // 
-            this.comboBoxTea.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTea.FormattingEnabled = true;
-            this.comboBoxTea.Items.AddRange(new object[] {
-            "Tra sen vàng",
-            "Trà thạch đào",
-            "Trà thanh đào",
-            "Trà thạch vải",
-            "Trà xanh đậu đỏ"});
-            this.comboBoxTea.Location = new System.Drawing.Point(193, 504);
-            this.comboBoxTea.Name = "comboBoxTea";
-            this.comboBoxTea.Size = new System.Drawing.Size(213, 39);
-            this.comboBoxTea.TabIndex = 3;
-            // 
-            // numericUpDownTeaQuantity
-            // 
-            this.numericUpDownTeaQuantity.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownTeaQuantity.Location = new System.Drawing.Point(589, 510);
-            this.numericUpDownTeaQuantity.Name = "numericUpDownTeaQuantity";
-            this.numericUpDownTeaQuantity.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDownTeaQuantity.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 510);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 27);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Chọn loại trà: ";
+            this.numericUpDown1.Location = new System.Drawing.Point(503, 549);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(459, 518);
+            this.label2.Location = new System.Drawing.Point(447, 518);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Số lượng: ";
+            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Số lượng:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 518);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Chọn nước:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(150, 549);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(178, 22);
+            this.textBox2.TabIndex = 17;
+            // 
+            // btncfsua
+            // 
+            this.btncfsua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncfsua.BackgroundImage")));
+            this.btncfsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btncfsua.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btncfsua.Location = new System.Drawing.Point(182, 3);
+            this.btncfsua.Name = "btncfsua";
+            this.btncfsua.Size = new System.Drawing.Size(170, 210);
+            this.btncfsua.TabIndex = 16;
+            this.btncfsua.UseVisualStyleBackColor = true;
+            this.btncfsua.Click += new System.EventHandler(this.btncfsua_Click);
+            // 
+            // btncf
+            // 
+            this.btncf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncf.BackgroundImage")));
+            this.btncf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btncf.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btncf.Location = new System.Drawing.Point(0, 0);
+            this.btncf.Name = "btncf";
+            this.btncf.Size = new System.Drawing.Size(170, 213);
+            this.btncf.TabIndex = 16;
+            this.btncf.UseVisualStyleBackColor = true;
+            this.btncf.Click += new System.EventHandler(this.btncf_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.numericUpDown2);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.btnCookies);
+            this.tabPage2.Controls.Add(this.btnCaramel);
+            this.tabPage2.Controls.Add(this.btnFreezeTra);
+            this.tabPage2.Controls.Add(this.btnFreezeS);
+            this.tabPage2.Controls.Add(this.btnClassic);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(868, 666);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Freeze";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(529, 535);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown2.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(460, 503);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Số lượng:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btns);
+            this.panel3.Controls.Add(this.btnx);
+            this.panel3.Controls.Add(this.btnth);
+            this.panel3.Location = new System.Drawing.Point(35, 588);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(539, 49);
+            this.panel3.TabIndex = 14;
+            // 
+            // btns
+            // 
+            this.btns.Location = new System.Drawing.Point(225, 3);
+            this.btns.Name = "btns";
+            this.btns.Size = new System.Drawing.Size(115, 46);
+            this.btns.TabIndex = 0;
+            this.btns.Text = "Sửa";
+            this.btns.UseVisualStyleBackColor = true;
+            this.btns.Click += new System.EventHandler(this.btns_Click);
+            // 
+            // btnx
+            // 
+            this.btnx.Location = new System.Drawing.Point(408, 3);
+            this.btnx.Name = "btnx";
+            this.btnx.Size = new System.Drawing.Size(128, 46);
+            this.btnx.TabIndex = 0;
+            this.btnx.Text = "Xóa";
+            this.btnx.UseVisualStyleBackColor = true;
+            this.btnx.Click += new System.EventHandler(this.btnx_Click);
+            // 
+            // btnth
+            // 
+            this.btnth.Location = new System.Drawing.Point(15, 3);
+            this.btnth.Name = "btnth";
+            this.btnth.Size = new System.Drawing.Size(128, 46);
+            this.btnth.TabIndex = 0;
+            this.btnth.Text = "Thêm";
+            this.btnth.UseVisualStyleBackColor = true;
+            this.btnth.Click += new System.EventHandler(this.btnth_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 503);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Chọn nước:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(138, 535);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(194, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // btnCookies
+            // 
+            this.btnCookies.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCookies.BackgroundImage")));
+            this.btnCookies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCookies.Location = new System.Drawing.Point(529, 3);
+            this.btnCookies.Name = "btnCookies";
+            this.btnCookies.Size = new System.Drawing.Size(178, 200);
+            this.btnCookies.TabIndex = 12;
+            this.btnCookies.Text = "Cookies and Cream";
+            this.btnCookies.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCookies.UseVisualStyleBackColor = true;
+            this.btnCookies.Click += new System.EventHandler(this.btnCookies_Click);
+            // 
+            // btnCaramel
+            // 
+            this.btnCaramel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCaramel.BackgroundImage")));
+            this.btnCaramel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCaramel.Location = new System.Drawing.Point(359, 3);
+            this.btnCaramel.Name = "btnCaramel";
+            this.btnCaramel.Size = new System.Drawing.Size(164, 200);
+            this.btnCaramel.TabIndex = 12;
+            this.btnCaramel.Text = "Caramel Phin Freeze";
+            this.btnCaramel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCaramel.UseVisualStyleBackColor = true;
+            this.btnCaramel.Click += new System.EventHandler(this.btnCaramel_Click);
+            // 
+            // btnFreezeTra
+            // 
+            this.btnFreezeTra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFreezeTra.BackgroundImage")));
+            this.btnFreezeTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFreezeTra.Location = new System.Drawing.Point(6, 6);
+            this.btnFreezeTra.Name = "btnFreezeTra";
+            this.btnFreezeTra.Size = new System.Drawing.Size(166, 197);
+            this.btnFreezeTra.TabIndex = 12;
+            this.btnFreezeTra.Text = "Freeze Trà Xanh";
+            this.btnFreezeTra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFreezeTra.UseVisualStyleBackColor = true;
+            this.btnFreezeTra.Click += new System.EventHandler(this.btnFreezeTra_Click);
+            // 
+            // btnFreezeS
+            // 
+            this.btnFreezeS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFreezeS.BackgroundImage")));
+            this.btnFreezeS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFreezeS.Location = new System.Drawing.Point(178, 6);
+            this.btnFreezeS.Name = "btnFreezeS";
+            this.btnFreezeS.Size = new System.Drawing.Size(175, 197);
+            this.btnFreezeS.TabIndex = 12;
+            this.btnFreezeS.Text = "Freeze Socola";
+            this.btnFreezeS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFreezeS.UseVisualStyleBackColor = true;
+            this.btnFreezeS.Click += new System.EventHandler(this.btnFreezeS_Click);
+            // 
+            // btnClassic
+            // 
+            this.btnClassic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClassic.BackgroundImage")));
+            this.btnClassic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClassic.Location = new System.Drawing.Point(6, 227);
+            this.btnClassic.Name = "btnClassic";
+            this.btnClassic.Size = new System.Drawing.Size(166, 189);
+            this.btnClassic.TabIndex = 12;
+            this.btnClassic.Text = "Classic Phin Freeze";
+            this.btnClassic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClassic.UseVisualStyleBackColor = true;
+            this.btnClassic.Click += new System.EventHandler(this.btnClassic_Click);
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.pictureBoxFreeze2);
-            this.tabPage3.Controls.Add(this.pictureBoxFreeze1);
-            this.tabPage3.Controls.Add(this.pictureBoxFreeze);
-            this.tabPage3.Controls.Add(this.buttonAddFreezeToCart);
-            this.tabPage3.Controls.Add(this.comboBoxFreeze);
-            this.tabPage3.Controls.Add(this.numericUpDownFreezeQuantity);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 49);
+            this.tabPage3.Controls.Add(this.numericUpDown3);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(843, 628);
+            this.tabPage3.Size = new System.Drawing.Size(868, 666);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Freeze";
+            this.tabPage3.Text = "Trà";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxFreeze2
+            // numericUpDown3
             // 
-            this.pictureBoxFreeze2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFreeze2.Image")));
-            this.pictureBoxFreeze2.Location = new System.Drawing.Point(561, 6);
-            this.pictureBoxFreeze2.Name = "pictureBoxFreeze2";
-            this.pictureBoxFreeze2.Size = new System.Drawing.Size(184, 200);
-            this.pictureBoxFreeze2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFreeze2.TabIndex = 12;
-            this.pictureBoxFreeze2.TabStop = false;
-            this.pictureBoxFreeze2.Click += new System.EventHandler(this.pictureBoxFreeze2_Click);
+            this.numericUpDown3.Location = new System.Drawing.Point(615, 538);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown3.TabIndex = 21;
             // 
-            // pictureBoxFreeze1
+            // label5
             // 
-            this.pictureBoxFreeze1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFreeze1.Image")));
-            this.pictureBoxFreeze1.Location = new System.Drawing.Point(289, 6);
-            this.pictureBoxFreeze1.Name = "pictureBoxFreeze1";
-            this.pictureBoxFreeze1.Size = new System.Drawing.Size(179, 200);
-            this.pictureBoxFreeze1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFreeze1.TabIndex = 11;
-            this.pictureBoxFreeze1.TabStop = false;
-            this.pictureBoxFreeze1.Click += new System.EventHandler(this.pictureBoxFreeze1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(542, 507);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Số lượng:";
             // 
-            // pictureBoxFreeze
+            // panel5
             // 
-            this.pictureBoxFreeze.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFreeze.Image")));
-            this.pictureBoxFreeze.Location = new System.Drawing.Point(6, 6);
-            this.pictureBoxFreeze.Name = "pictureBoxFreeze";
-            this.pictureBoxFreeze.Size = new System.Drawing.Size(180, 200);
-            this.pictureBoxFreeze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFreeze.TabIndex = 10;
-            this.pictureBoxFreeze.TabStop = false;
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.button5);
+            this.panel5.Location = new System.Drawing.Point(81, 598);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(539, 49);
+            this.panel5.TabIndex = 18;
             // 
-            // buttonAddFreezeToCart
+            // button3
             // 
-            this.buttonAddFreezeToCart.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddFreezeToCart.Location = new System.Drawing.Point(680, 576);
-            this.buttonAddFreezeToCart.Name = "buttonAddFreezeToCart";
-            this.buttonAddFreezeToCart.Size = new System.Drawing.Size(145, 45);
-            this.buttonAddFreezeToCart.TabIndex = 9;
-            this.buttonAddFreezeToCart.Text = "Thêm vào giỏ";
-            this.buttonAddFreezeToCart.UseVisualStyleBackColor = true;
-            this.buttonAddFreezeToCart.Click += new System.EventHandler(this.buttonAddFreezeToCart_Click);
+            this.button3.Location = new System.Drawing.Point(225, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 46);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Sửa";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // comboBoxFreeze
+            // button4
             // 
-            this.comboBoxFreeze.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxFreeze.FormattingEnabled = true;
-            this.comboBoxFreeze.Items.AddRange(new object[] {
-            "Trà ô long lài",
-            "Trà vải",
-            "Trà đào",
-            "Trà hạt sen",
-            "Trà chanh"});
-            this.comboBoxFreeze.Location = new System.Drawing.Point(268, 503);
-            this.comboBoxFreeze.Name = "comboBoxFreeze";
-            this.comboBoxFreeze.Size = new System.Drawing.Size(231, 39);
-            this.comboBoxFreeze.TabIndex = 8;
+            this.button4.Location = new System.Drawing.Point(408, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(128, 46);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Xóa";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownFreezeQuantity
+            // button5
             // 
-            this.numericUpDownFreezeQuantity.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownFreezeQuantity.Location = new System.Drawing.Point(648, 509);
-            this.numericUpDownFreezeQuantity.Name = "numericUpDownFreezeQuantity";
-            this.numericUpDownFreezeQuantity.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDownFreezeQuantity.TabIndex = 7;
+            this.button5.Location = new System.Drawing.Point(15, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 46);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Thêm";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 509);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 27);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Chọn loại Freeze: ";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 507);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Chọn nước:";
             // 
-            // label8
+            // textBox3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(521, 517);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 24);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Số lượng: ";
+            this.textBox3.Location = new System.Drawing.Point(127, 538);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(194, 22);
+            this.textBox3.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(229, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(178, 246);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(6, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 246);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Trà Sen Vàng";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.pictureBox14);
-            this.tabPage4.Controls.Add(this.pictureBox13);
-            this.tabPage4.Controls.Add(this.pictureBoxCake3);
-            this.tabPage4.Controls.Add(this.pictureBoxCake2);
-            this.tabPage4.Controls.Add(this.pictureBoxCake1);
-            this.tabPage4.Controls.Add(this.pictureBoxCake);
-            this.tabPage4.Controls.Add(this.buttonAddCakeToCart);
-            this.tabPage4.Controls.Add(this.comboBoxCake);
-            this.tabPage4.Controls.Add(this.numericUpDownCakeQuantity);
+            this.tabPage4.Controls.Add(this.numericUpDown5);
             this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Location = new System.Drawing.Point(4, 49);
+            this.tabPage4.Controls.Add(this.textBox5);
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(843, 628);
+            this.tabPage4.Size = new System.Drawing.Size(868, 666);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Bánh";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox14
+            // numericUpDown5
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(574, 278);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox14.TabIndex = 15;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Location = new System.Drawing.Point(305, 293);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox13.TabIndex = 14;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBoxCake3
-            // 
-            this.pictureBoxCake3.Location = new System.Drawing.Point(68, 279);
-            this.pictureBoxCake3.Name = "pictureBoxCake3";
-            this.pictureBoxCake3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxCake3.TabIndex = 13;
-            this.pictureBoxCake3.TabStop = false;
-            // 
-            // pictureBoxCake2
-            // 
-            this.pictureBoxCake2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCake2.Image")));
-            this.pictureBoxCake2.Location = new System.Drawing.Point(523, 6);
-            this.pictureBoxCake2.Name = "pictureBoxCake2";
-            this.pictureBoxCake2.Size = new System.Drawing.Size(220, 162);
-            this.pictureBoxCake2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCake2.TabIndex = 12;
-            this.pictureBoxCake2.TabStop = false;
-            // 
-            // pictureBoxCake1
-            // 
-            this.pictureBoxCake1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCake1.Image")));
-            this.pictureBoxCake1.Location = new System.Drawing.Point(230, 6);
-            this.pictureBoxCake1.Name = "pictureBoxCake1";
-            this.pictureBoxCake1.Size = new System.Drawing.Size(244, 162);
-            this.pictureBoxCake1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCake1.TabIndex = 11;
-            this.pictureBoxCake1.TabStop = false;
-            // 
-            // pictureBoxCake
-            // 
-            this.pictureBoxCake.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCake.Image")));
-            this.pictureBoxCake.Location = new System.Drawing.Point(6, 3);
-            this.pictureBoxCake.Name = "pictureBoxCake";
-            this.pictureBoxCake.Size = new System.Drawing.Size(187, 165);
-            this.pictureBoxCake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCake.TabIndex = 10;
-            this.pictureBoxCake.TabStop = false;
-            this.pictureBoxCake.Click += new System.EventHandler(this.pictureBoxCake_Click_1);
-            // 
-            // buttonAddCakeToCart
-            // 
-            this.buttonAddCakeToCart.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCakeToCart.Location = new System.Drawing.Point(678, 577);
-            this.buttonAddCakeToCart.Name = "buttonAddCakeToCart";
-            this.buttonAddCakeToCart.Size = new System.Drawing.Size(145, 45);
-            this.buttonAddCakeToCart.TabIndex = 9;
-            this.buttonAddCakeToCart.Text = "Thêm vào giỏ";
-            this.buttonAddCakeToCart.UseVisualStyleBackColor = true;
-            this.buttonAddCakeToCart.Click += new System.EventHandler(this.buttonAddCakeToCart_Click);
-            // 
-            // comboBoxCake
-            // 
-            this.comboBoxCake.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCake.FormattingEnabled = true;
-            this.comboBoxCake.Items.AddRange(new object[] {
-            "Trà ô long lài",
-            "Trà vải",
-            "Trà đào",
-            "Trà hạt sen",
-            "Trà chanh"});
-            this.comboBoxCake.Location = new System.Drawing.Point(242, 503);
-            this.comboBoxCake.Name = "comboBoxCake";
-            this.comboBoxCake.Size = new System.Drawing.Size(257, 39);
-            this.comboBoxCake.TabIndex = 8;
-            // 
-            // numericUpDownCakeQuantity
-            // 
-            this.numericUpDownCakeQuantity.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownCakeQuantity.Location = new System.Drawing.Point(654, 510);
-            this.numericUpDownCakeQuantity.Name = "numericUpDownCakeQuantity";
-            this.numericUpDownCakeQuantity.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDownCakeQuantity.TabIndex = 7;
+            this.numericUpDown5.Location = new System.Drawing.Point(577, 544);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown5.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 509);
+            this.label9.Location = new System.Drawing.Point(508, 512);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 27);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Chọn loại bánh: ";
+            this.label9.Size = new System.Drawing.Size(63, 16);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Số lượng:";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.button13);
+            this.panel7.Controls.Add(this.button14);
+            this.panel7.Controls.Add(this.button15);
+            this.panel7.Location = new System.Drawing.Point(83, 597);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(539, 49);
+            this.panel7.TabIndex = 18;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(225, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(115, 46);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Sửa";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(408, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(128, 46);
+            this.button14.TabIndex = 0;
+            this.button14.Text = "Xóa";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(15, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(128, 46);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Thêm";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(519, 518);
+            this.label10.Location = new System.Drawing.Point(114, 512);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 24);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Số lượng: ";
+            this.label10.Size = new System.Drawing.Size(73, 16);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Chọn nước:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(186, 544);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(194, 22);
+            this.textBox5.TabIndex = 17;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.Location = new System.Drawing.Point(429, 26);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(206, 224);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "button8";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(205, 26);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(190, 224);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "button7";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Location = new System.Drawing.Point(3, 26);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(180, 224);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "button6";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.pictureBoxCombo2);
-            this.tabPage5.Controls.Add(this.pictureBoxCombo1);
-            this.tabPage5.Controls.Add(this.pictureBoxCombo);
-            this.tabPage5.Controls.Add(this.buttonAddComboToCart);
-            this.tabPage5.Controls.Add(this.comboBoxCombo);
-            this.tabPage5.Controls.Add(this.numericUpDownComboQuantity);
-            this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.label12);
-            this.tabPage5.Location = new System.Drawing.Point(4, 49);
+            this.tabPage5.Controls.Add(this.button16);
+            this.tabPage5.Controls.Add(this.numericUpDown4);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.panel6);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Controls.Add(this.button9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(843, 628);
+            this.tabPage5.Size = new System.Drawing.Size(874, 657);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Combo";
+            this.tabPage5.Text = "Combo ";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxCombo2
+            // button16
             // 
-            this.pictureBoxCombo2.Location = new System.Drawing.Point(575, 44);
-            this.pictureBoxCombo2.Name = "pictureBoxCombo2";
-            this.pictureBoxCombo2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxCombo2.TabIndex = 12;
-            this.pictureBoxCombo2.TabStop = false;
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button16.Location = new System.Drawing.Point(302, 6);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(272, 265);
+            this.button16.TabIndex = 22;
+            this.button16.Text = "button16";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button16.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxCombo1
+            // numericUpDown4
             // 
-            this.pictureBoxCombo1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCombo1.Image")));
-            this.pictureBoxCombo1.Location = new System.Drawing.Point(245, 15);
-            this.pictureBoxCombo1.Name = "pictureBoxCombo1";
-            this.pictureBoxCombo1.Size = new System.Drawing.Size(238, 154);
-            this.pictureBoxCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCombo1.TabIndex = 11;
-            this.pictureBoxCombo1.TabStop = false;
-            this.pictureBoxCombo1.Click += new System.EventHandler(this.pictureBoxCombo1_Click);
+            this.numericUpDown4.Location = new System.Drawing.Point(555, 548);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown4.TabIndex = 21;
             // 
-            // pictureBoxCombo
+            // label7
             // 
-            this.pictureBoxCombo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCombo.Image")));
-            this.pictureBoxCombo.Location = new System.Drawing.Point(6, 6);
-            this.pictureBoxCombo.Name = "pictureBoxCombo";
-            this.pictureBoxCombo.Size = new System.Drawing.Size(221, 172);
-            this.pictureBoxCombo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCombo.TabIndex = 10;
-            this.pictureBoxCombo.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(511, 510);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Số lượng:";
             // 
-            // buttonAddComboToCart
+            // panel6
             // 
-            this.buttonAddComboToCart.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddComboToCart.Location = new System.Drawing.Point(678, 563);
-            this.buttonAddComboToCart.Name = "buttonAddComboToCart";
-            this.buttonAddComboToCart.Size = new System.Drawing.Size(145, 45);
-            this.buttonAddComboToCart.TabIndex = 9;
-            this.buttonAddComboToCart.Text = "Thêm vào giỏ";
-            this.buttonAddComboToCart.UseVisualStyleBackColor = true;
-            this.buttonAddComboToCart.Click += new System.EventHandler(this.buttonAddComboToCart_Click);
+            this.panel6.Controls.Add(this.button10);
+            this.panel6.Controls.Add(this.button11);
+            this.panel6.Controls.Add(this.button12);
+            this.panel6.Location = new System.Drawing.Point(61, 591);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(539, 49);
+            this.panel6.TabIndex = 18;
             // 
-            // comboBoxCombo
+            // button10
             // 
-            this.comboBoxCombo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCombo.FormattingEnabled = true;
-            this.comboBoxCombo.Items.AddRange(new object[] {
-            "Trà ô long lài",
-            "Trà vải",
-            "Trà đào",
-            "Trà hạt sen",
-            "Trà chanh"});
-            this.comboBoxCombo.Location = new System.Drawing.Point(227, 490);
-            this.comboBoxCombo.Name = "comboBoxCombo";
-            this.comboBoxCombo.Size = new System.Drawing.Size(288, 39);
-            this.comboBoxCombo.TabIndex = 8;
+            this.button10.Location = new System.Drawing.Point(225, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(115, 46);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Sửa";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownComboQuantity
+            // button11
             // 
-            this.numericUpDownComboQuantity.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownComboQuantity.Location = new System.Drawing.Point(678, 496);
-            this.numericUpDownComboQuantity.Name = "numericUpDownComboQuantity";
-            this.numericUpDownComboQuantity.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDownComboQuantity.TabIndex = 7;
+            this.button11.Location = new System.Drawing.Point(408, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(128, 46);
+            this.button11.TabIndex = 0;
+            this.button11.Text = "Xóa";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // button12
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(40, 496);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(166, 27);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Chọn combo: ";
+            this.button12.Location = new System.Drawing.Point(15, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(128, 46);
+            this.button12.TabIndex = 0;
+            this.button12.Text = "Thêm";
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // label8
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(535, 504);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 24);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Số lượng: ";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(58, 510);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 16);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Chọn nước:";
             // 
-            // tabPage6
+            // textBox4
             // 
-            this.tabPage6.Controls.Add(this.listBoxCart);
-            this.tabPage6.Location = new System.Drawing.Point(4, 49);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(843, 628);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Danh sách nước";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.textBox4.Location = new System.Drawing.Point(144, 548);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(194, 22);
+            this.textBox4.TabIndex = 17;
             // 
-            // listBoxCart
+            // button9
             // 
-            this.listBoxCart.FormattingEnabled = true;
-            this.listBoxCart.ItemHeight = 40;
-            this.listBoxCart.Location = new System.Drawing.Point(17, 17);
-            this.listBoxCart.Name = "listBoxCart";
-            this.listBoxCart.Size = new System.Drawing.Size(682, 484);
-            this.listBoxCart.TabIndex = 0;
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Location = new System.Drawing.Point(21, 6);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(253, 265);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "button9";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // lstDrinks
+            // 
+            this.lstDrinks.FormattingEnabled = true;
+            this.lstDrinks.ItemHeight = 16;
+            this.lstDrinks.Location = new System.Drawing.Point(893, 30);
+            this.lstDrinks.Name = "lstDrinks";
+            this.lstDrinks.Size = new System.Drawing.Size(363, 404);
+            this.lstDrinks.TabIndex = 1;
             // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 696);
-            this.Controls.Add(this.tabCaffee);
+            this.ClientSize = new System.Drawing.Size(1263, 688);
+            this.Controls.Add(this.lstDrinks);
+            this.Controls.Add(this.tabControl1);
             this.Name = "frmOrder";
-            this.Text = "ORDER COFFEE";
-            this.tabCaffee.ResumeLayout(false);
+            this.Text = "Menu";
+            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoffee)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTea)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTeaQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFreeze)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFreezeQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCake)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCakeQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCombo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownComboQuantity)).EndInit();
-            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabCaffee;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Label labelCoffee;
-        private System.Windows.Forms.ComboBox comboBoxCoffee;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
-        private System.Windows.Forms.Button buttonAddToCart;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnCookies;
+        private System.Windows.Forms.Button btnCaramel;
+        private System.Windows.Forms.Button btnFreezeS;
+        private System.Windows.Forms.Button btnClassic;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btns;
+        private System.Windows.Forms.Button btnx;
+        private System.Windows.Forms.Button btnth;
+        private System.Windows.Forms.Button btnFreezeTra;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxTea;
-        private System.Windows.Forms.NumericUpDown numericUpDownTeaQuantity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btncfsua;
+        private System.Windows.Forms.Button btncf;
+        private System.Windows.Forms.ListBox lstDrinks;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.ListBox listBoxCart;
-        private System.Windows.Forms.PictureBox pictureBoxCoffee;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBoxTea2;
-        private System.Windows.Forms.PictureBox pictureBoxTea1;
-        private System.Windows.Forms.PictureBox pictureBoxTea;
-        private System.Windows.Forms.Button buttonAddFreezeToCart;
-        private System.Windows.Forms.ComboBox comboBoxFreeze;
-        private System.Windows.Forms.NumericUpDown numericUpDownFreezeQuantity;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonAddCakeToCart;
-        private System.Windows.Forms.ComboBox comboBoxCake;
-        private System.Windows.Forms.NumericUpDown numericUpDownCakeQuantity;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBoxFreeze2;
-        private System.Windows.Forms.PictureBox pictureBoxFreeze1;
-        private System.Windows.Forms.PictureBox pictureBoxFreeze;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBoxCake3;
-        private System.Windows.Forms.PictureBox pictureBoxCake2;
-        private System.Windows.Forms.PictureBox pictureBoxCake1;
-        private System.Windows.Forms.PictureBox pictureBoxCake;
-        private System.Windows.Forms.PictureBox pictureBoxCombo2;
-        private System.Windows.Forms.PictureBox pictureBoxCombo1;
-        private System.Windows.Forms.PictureBox pictureBoxCombo;
-        private System.Windows.Forms.Button buttonAddComboToCart;
-        private System.Windows.Forms.ComboBox comboBoxCombo;
-        private System.Windows.Forms.NumericUpDown numericUpDownComboQuantity;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button9;
     }
 }

@@ -28,21 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qLHightLandsCFDataSet = new QuanLyHightLandsCofffe.QLHightLandsCFDataSet();
+            this.taiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.taiKhoanTableAdapter = new QuanLyHightLandsCofffe.QLHightLandsCFDataSetTableAdapters.TaiKhoanTableAdapter();
+            this.tenHienThiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenDangNhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHightLandsCFDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,6 +65,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "TenDangNhap", true));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(233, 18);
             this.textBox1.Name = "textBox1";
@@ -108,27 +117,13 @@
             this.panel1.Size = new System.Drawing.Size(556, 313);
             this.panel1.TabIndex = 3;
             // 
-            // dataGridView1
+            // textBox4
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 400);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(738, 318);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(233, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 38);
-            this.textBox2.TabIndex = 2;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(233, 249);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(270, 38);
+            this.textBox4.TabIndex = 2;
             // 
             // textBox3
             // 
@@ -138,13 +133,31 @@
             this.textBox3.Size = new System.Drawing.Size(270, 38);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox4
+            // textBox2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(233, 249);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(270, 38);
-            this.textBox4.TabIndex = 2;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(233, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(270, 38);
+            this.textBox2.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tenHienThiDataGridViewTextBoxColumn,
+            this.tenDangNhapDataGridViewTextBoxColumn,
+            this.matKhauDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.taiKhoanBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 400);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(738, 318);
+            this.dataGridView1.TabIndex = 4;
             // 
             // button1
             // 
@@ -155,19 +168,51 @@
             this.button1.Text = "Cập nhật ";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // qLHightLandsCFDataSet
             // 
-            this.Column1.HeaderText = "Tên đăng nhập";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.qLHightLandsCFDataSet.DataSetName = "QLHightLandsCFDataSet";
+            this.qLHightLandsCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column2
+            // taiKhoanBindingSource
             // 
-            this.Column2.HeaderText = "Mật khẩu";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.taiKhoanBindingSource.DataMember = "TaiKhoan";
+            this.taiKhoanBindingSource.DataSource = this.qLHightLandsCFDataSet;
+            // 
+            // taiKhoanTableAdapter
+            // 
+            this.taiKhoanTableAdapter.ClearBeforeFill = true;
+            // 
+            // tenHienThiDataGridViewTextBoxColumn
+            // 
+            this.tenHienThiDataGridViewTextBoxColumn.DataPropertyName = "TenHienThi";
+            this.tenHienThiDataGridViewTextBoxColumn.HeaderText = "TenHienThi";
+            this.tenHienThiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenHienThiDataGridViewTextBoxColumn.Name = "tenHienThiDataGridViewTextBoxColumn";
+            this.tenHienThiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenDangNhapDataGridViewTextBoxColumn
+            // 
+            this.tenDangNhapDataGridViewTextBoxColumn.DataPropertyName = "TenDangNhap";
+            this.tenDangNhapDataGridViewTextBoxColumn.HeaderText = "TenDangNhap";
+            this.tenDangNhapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenDangNhapDataGridViewTextBoxColumn.Name = "tenDangNhapDataGridViewTextBoxColumn";
+            this.tenDangNhapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matKhauDataGridViewTextBoxColumn
+            // 
+            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
+            this.matKhauDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmTaikhoan
             // 
@@ -179,9 +224,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmTaikhoan";
             this.Text = "THÔNG TIN TÀI KHOẢN";
+            this.Load += new System.EventHandler(this.frmTaikhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHightLandsCFDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,8 +246,13 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button button1;
+        private QLHightLandsCFDataSet qLHightLandsCFDataSet;
+        private System.Windows.Forms.BindingSource taiKhoanBindingSource;
+        private QLHightLandsCFDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenHienThiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenDangNhapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
     }
 }

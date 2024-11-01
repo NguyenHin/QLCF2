@@ -7,131 +7,169 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyHightLandsCofffe
 {
     public partial class frmOrder : Form
     {
-        private List<string> cartItems = new List<string>();
+        private List<string> drinks = new List<string>();
+
         public frmOrder()
         {
             InitializeComponent();
-            pictureBoxCoffee.Click += PictureBoxCoffee_Click;
-            pictureBox1.Click += PictureBox1_Click;
-            pictureBox2.Click += PictureBox2_Click;
-            pictureBoxTea.Click += PictureBoxTea_Click;
-            pictureBoxFreeze.Click += PictureBoxFreeze_Click;
-            pictureBoxCake.Click += PictureBoxCake_Click;
-            pictureBoxCombo.Click += PictureBoxCombo_Click;
+        }
+        private void btnFreezeTra_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "Freeze trà xanh";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFreezeS_Click(object sender, EventArgs e)
         {
-            // Lấy thông tin từ ComboBox và NumericUpDown cho trà
-            string teaType = comboBoxTea.SelectedItem?.ToString();
-            int quantity = (int)numericUpDownTeaQuantity.Value;
-            // Tạo chuỗi hiển thị cho sản phẩm trong giỏ hàng
-            string cartItem = $"{quantity} x {teaType}";
-            // Thêm sản phẩm vào danh sách giỏ hàng
-            cartItems.Add(cartItem);
-            // Hiển thị sản phẩm trong ListBox
-            listBoxCart.Items.Add(cartItem);
-            // Hiển thị thông báo xác nhận
-            MessageBox.Show($"{cartItem} đã được thêm vào giỏ hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Text = "Freeze Socola";
         }
 
-        private void buttonAddToCart_Click(object sender, EventArgs e)
+        private void btnCaramel_Click(object sender, EventArgs e)
         {
-            string coffeeType = comboBoxCoffee.SelectedItem?.ToString();
-            int quantity = (int)numericUpDownQuantity.Value;
-            string cartItem = $"{quantity} x {coffeeType}";
-            cartItems.Add(cartItem);
-            listBoxCart.Items.Add(cartItem);
-            MessageBox.Show($"{cartItem} đã được thêm vào giỏ hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Text = "Carmel Phin Freeze";
         }
 
-        private void buttonAddFreezeToCart_Click(object sender, EventArgs e)
+        private void btnClassic_Click(object sender, EventArgs e)
         {
-            string freezeType = comboBoxFreeze.SelectedItem?.ToString();
-            int quantity = (int)numericUpDownFreezeQuantity.Value;
-            string cartItem = $"{quantity} x {freezeType}";
-            cartItems.Add(cartItem);
-            listBoxCart.Items.Add(cartItem);
-            MessageBox.Show($"{cartItem} đã được thêm vào giỏ hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Text = "Classic Phin Freeze";
         }
 
-        private void buttonAddCakeToCart_Click(object sender, EventArgs e)
+        private void btnCookies_Click(object sender, EventArgs e)
         {
-            string cakeType = comboBoxCake.SelectedItem?.ToString();
-            int quantity = (int)numericUpDownCakeQuantity.Value;
-            string cartItem = $"{quantity} x {cakeType}";
-            cartItems.Add(cartItem);
-            listBoxCart.Items.Add(cartItem);
-            MessageBox.Show($"{cartItem} đã được thêm vào giỏ hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Text = "Cookies & Cream";
         }
 
-        private void buttonAddComboToCart_Click(object sender, EventArgs e)
+        private void btnth_Click(object sender, EventArgs e)
         {
-            string comboType = comboBoxCombo.SelectedItem?.ToString();
-            int quantity = (int)numericUpDownComboQuantity.Value;
-            string cartItem = $"{quantity} x {comboType}";
-            cartItems.Add(cartItem);
-            listBoxCart.Items.Add(cartItem);
-            MessageBox.Show($"{cartItem} đã được thêm vào giỏ hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string newDrink = textBox1.Text.Trim();
+            int quantity = (int)numericUpDown1.Value; // Lấy số lượng từ NumericUpDown
+  
+            if (!string.IsNullOrEmpty(newDrink) && quantity > 0)
+            {
+                AddDrink(newDrink, quantity);
+                textBox1.Clear();
+                numericUpDown1.Value = 1; 
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên đồ uống và số lượng hợp lệ.");
+            }
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+        private void btns_Click(object sender, EventArgs e)
         {
-            comboBoxCoffee.Text = "Cà phê đen";
+            if (lstDrinks.SelectedItem != null && !string.IsNullOrEmpty(textBox1.Text))
+            {
+                string selectedDrink = lstDrinks.SelectedItem.ToString().Split(' ')[0];
+                int quantity = (int)numericUpDown1.Value;
+                drinks.Remove(lstDrinks.SelectedItem.ToString());
+                AddDrink(textBox1.Text.Trim(), quantity);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đồ uống và nhập tên mới.");
+            }
         }
 
-        private void PictureBoxCoffee_Click(object sender, EventArgs e)
+        private void btnx_Click(object sender, EventArgs e)
         {
-            comboBoxCoffee.Text = "Cà phê sữa";
+
+            if (lstDrinks.SelectedItem != null)
+            {
+                // Hiển thị hộp thoại xác nhận
+                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa đồ uống này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    drinks.Remove(lstDrinks.SelectedItem.ToString());
+                    UpdateDrinkList();
+                    MessageBox.Show("Đồ uống đã được xóa.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đồ uống để xóa.");
+            }
+
+        }
+        private void AddDrink(string drink, int quantity) 
+        {
+            drinks.Add($"{drink} ({quantity})"); 
+       
+            UpdateDrinkList();
+        }
+        private void UpdateDrinkList() 
+        {
+            lstDrinks.Items.Clear();
+            foreach (var drink in drinks)
+            {
+                lstDrinks.Items.Add(drink);
+            }
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
+        private void btncf_Click(object sender, EventArgs e)
         {
-            comboBoxCoffee.Text = "Cappuccino";
+            textBox2.Text = "Cà phê ";
         }
 
-        private void PictureBoxTea_Click(object sender, EventArgs e)
+        private void btncfsua_Click(object sender, EventArgs e)
         {
-            comboBoxTea.Text = "Trà Sen Vàng";
-        }
-        private void PictureBoxFreeze_Click(object sender, EventArgs e)
-        {
-            comboBoxFreeze.Text = "Freeze Matcha";
+            textBox2.Text = " Cà phê sữa";
         }
 
-        private void pictureBoxFreeze1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            comboBoxFreeze.Text = "Freeze Socola";
+            string newDrink = textBox2.Text.Trim();
+            int quantity = (int)numericUpDown2.Value; // Lấy số lượng từ NumericUpDown
+
+            if (!string.IsNullOrEmpty(newDrink) && quantity > 0)
+            {
+                AddDrink(newDrink, quantity);
+                textBox2.Clear();
+                numericUpDown2.Value = 1;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên đồ uống và số lượng hợp lệ.");
+            }
         }
 
-        private void PictureBoxCake_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            comboBoxCake.Text = "Bánh Tiramisu";
+            if (lstDrinks.SelectedItem != null && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                drinks.Remove(lstDrinks.SelectedItem.ToString());
+                AddDrink(textBox2.Text.Trim(), (int)numericUpDown2.Value);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đồ uống và nhập tên mới.");
+            }
         }
 
-        private void PictureBoxCombo_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            comboBoxCombo.Text = "Combo Hứng Khởi";
-        }
+            if (lstDrinks.SelectedItem != null)
+            {
+                // Hiển thị hộp thoại xác nhận
+                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa đồ uống này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        private void pictureBoxCombo1_Click(object sender, EventArgs e)
-        {
-            comboBoxCombo.Text = "Combo Chuyện Trò";
-        }
-
-        private void pictureBoxFreeze2_Click(object sender, EventArgs e)
-        {
-            comboBoxFreeze.Text = "Caramel Phin Freeze";
-        }
-
-        private void pictureBoxCake_Click_1(object sender, EventArgs e)
-        {
-            comboBoxCake.Text = "Bánh Mì Que Pate";
+                if (result == DialogResult.Yes)
+                {
+                    drinks.Remove(lstDrinks.SelectedItem.ToString());
+                    UpdateDrinkList();
+                    MessageBox.Show("Đồ uống đã được xóa.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đồ uống để xóa.");
+            }
         }
     }
- }
+}

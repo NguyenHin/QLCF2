@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QuanLyHightLandsCofffe.BUS;
+using System;
 using System.Windows.Forms;
+using static QuanLyHightLandsCofffe.DAL.Entities.Model1;
 
 namespace QuanLyHightLandsCofffe
 {
@@ -22,17 +24,15 @@ namespace QuanLyHightLandsCofffe
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
-            // Example username and password for validation
-            string username = "admin";
-            string password = "123";
+            string enteredUsername = txttenDN.Text.Trim();
+            string enteredPassword = txtMatkhau.Text.Trim();
 
-            // Get input from text boxes
-            string enteredUsername = txttenDN.Text;
-            string enteredPassword = txtMatkhau.Text; // Assume you have a txtMatKhau textbox for the password
+            AccountService accountService = AccountService.Instance;
 
-            // Check the username and password
-            if (enteredUsername == username && enteredPassword == password)
+            if (accountService.ValidateUser(enteredUsername, enteredPassword))
             {
+                UserSession.CurrentUserName = enteredUsername;
+
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frmChucNang f = new frmChucNang();
@@ -53,10 +53,16 @@ namespace QuanLyHightLandsCofffe
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            frmDangki f =  new frmDangki();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult q = MessageBox.Show("Bạn Có Muốn Thoát Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (q.Equals(DialogResult.Yes))
+            {
+                this.Close();
+            }
         }
     }
 }

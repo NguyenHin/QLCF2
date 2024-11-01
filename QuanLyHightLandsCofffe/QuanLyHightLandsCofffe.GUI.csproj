@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -47,23 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAccout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAccout.Designer.cs">
-      <DependentUpon>frmAccout.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChucNang.Designer.cs">
       <DependentUpon>frmChucNang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDangki.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDangki.Designer.cs">
-      <DependentUpon>frmDangki.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -71,11 +66,29 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOrder.cs">
+    <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrder.Designer.cs">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLy.Designer.cs">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTacVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTacVu.Designer.cs">
+      <DependentUpon>frmTacVu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaikhoan.cs">
       <SubType>Form</SubType>
@@ -83,31 +96,47 @@
     <Compile Include="frmTaikhoan.Designer.cs">
       <DependentUpon>frmTaikhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="frmOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAccout.resx">
-      <DependentUpon>frmAccout.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="QLHightLandsCFDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHightLandsCFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLHightLandsCFDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHightLandsCFDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmChucNang.resx">
       <DependentUpon>frmChucNang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrder.resx">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLy.resx">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTacVu.resx">
+      <DependentUpon>frmTacVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaikhoan.resx">
       <DependentUpon>frmTaikhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,6 +147,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +157,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLHightLandsCFDataSet.xsc">
+      <DependentUpon>QLHightLandsCFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHightLandsCFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHightLandsCFDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHightLandsCFDataSet.xss">
+      <DependentUpon>QLHightLandsCFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHightLandsCFDataSet1.xsc">
+      <DependentUpon>QLHightLandsCFDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLHightLandsCFDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHightLandsCFDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHightLandsCFDataSet1.xss">
+      <DependentUpon>QLHightLandsCFDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

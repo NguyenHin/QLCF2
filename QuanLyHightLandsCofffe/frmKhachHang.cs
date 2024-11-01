@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyHightLandsCofffe
 {
-    public partial class Menu : Form
+    public partial class frmKhachHang : Form
     {
-        public Menu()
+        public frmKhachHang()
         {
             InitializeComponent();
         }
 
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

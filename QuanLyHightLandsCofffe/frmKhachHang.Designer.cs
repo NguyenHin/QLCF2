@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHightLandsCofffe
 {
-    partial class frmAccout
+    partial class frmKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmAccout
+            // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmAccout";
-            this.Text = "ACCOUT";
+            this.Name = "frmKhachHang";
+            this.Text = "frmKhachHang";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.ResumeLayout(false);
 
         }
