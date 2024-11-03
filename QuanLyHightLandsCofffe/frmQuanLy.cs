@@ -1,12 +1,20 @@
-﻿using System;
+﻿using QuanLyHightLandsCofffe.BUS;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyHightLandsCofffe
 {
     public partial class frmQuanLY : Form
     {
+        private readonly BillService billService = BillService.Instance; // Sử dụng singleton
+        private readonly PromotionService promotionService = PromotionService.Instance; // Singleton instance of BillInfoService
+        private readonly TableFoodService tableFoodService = TableFoodService.Instance; // Singleton instance of BillInfoService
+        private readonly MenuService menuService = MenuService.Instance; // Singleton instance of BillService
+
+
         public frmQuanLY()
         {
             InitializeComponent();
@@ -109,5 +117,9 @@ namespace QuanLyHightLandsCofffe
             );
         }
 
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

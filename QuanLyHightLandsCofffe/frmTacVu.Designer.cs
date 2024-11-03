@@ -34,14 +34,14 @@
             this.cmbFood = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbDiscount = new System.Windows.Forms.ComboBox();
             this.cmbChangeTable = new System.Windows.Forms.ComboBox();
             this.btnChangeTable = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lsBill = new System.Windows.Forms.ListView();
-            this.cmbDiscount = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -125,6 +125,25 @@
             this.panel2.Size = new System.Drawing.Size(723, 108);
             this.panel2.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(320, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Mã giảm giá";
+            // 
+            // cmbDiscount
+            // 
+            this.cmbDiscount.FormattingEnabled = true;
+            this.cmbDiscount.Location = new System.Drawing.Point(249, 67);
+            this.cmbDiscount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbDiscount.Name = "cmbDiscount";
+            this.cmbDiscount.Size = new System.Drawing.Size(236, 33);
+            this.cmbDiscount.TabIndex = 3;
+            this.cmbDiscount.SelectedIndexChanged += new System.EventHandler(this.cmbDiscount_SelectedIndexChanged);
+            // 
             // cmbChangeTable
             // 
             this.cmbChangeTable.FormattingEnabled = true;
@@ -191,28 +210,10 @@
             this.lsBill.UseCompatibleStateImageBehavior = false;
             this.lsBill.View = System.Windows.Forms.View.Details;
             // 
-            // cmbDiscount
-            // 
-            this.cmbDiscount.FormattingEnabled = true;
-            this.cmbDiscount.Location = new System.Drawing.Point(249, 67);
-            this.cmbDiscount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbDiscount.Name = "cmbDiscount";
-            this.cmbDiscount.Size = new System.Drawing.Size(236, 33);
-            this.cmbDiscount.TabIndex = 3;
-            this.cmbDiscount.SelectedIndexChanged += new System.EventHandler(this.cmbDiscount_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã giảm giá";
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
@@ -221,10 +222,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 100;
             // 
             // frmTacVu
             // 

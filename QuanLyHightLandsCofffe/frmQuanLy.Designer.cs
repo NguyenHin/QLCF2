@@ -67,18 +67,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgvDoanhthu = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taiKhoanTableAdapter1 = new QuanLyHightLandsCofffe.QLHightLandsCFDataSet1TableAdapters.TaiKhoanTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.taiKhoanTableAdapter1 = new QuanLyHightLandsCofffe.QLHightLandsCFDataSet1TableAdapters.TaiKhoanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHightLandsCFDataSet1)).BeginInit();
@@ -103,7 +103,7 @@
             this.txtTimm.Location = new System.Drawing.Point(213, 23);
             this.txtTimm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimm.Name = "txtTimm";
-            this.txtTimm.Size = new System.Drawing.Size(378, 67);
+            this.txtTimm.Size = new System.Drawing.Size(378, 58);
             this.txtTimm.TabIndex = 2;
             this.txtTimm.TextChanged += new System.EventHandler(this.txtTimm_TextChanged);
             // 
@@ -241,11 +241,11 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(8, 75);
+            this.tabPage4.Location = new System.Drawing.Point(8, 66);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage4.Size = new System.Drawing.Size(2024, 1089);
+            this.tabPage4.Size = new System.Drawing.Size(2024, 1098);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Danh Mục";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -314,8 +314,8 @@
             this.tabCaffee.Controls.Add(this.tabPage3);
             this.tabCaffee.Controls.Add(this.tabPage4);
             this.tabCaffee.Controls.Add(this.tabPage5);
-            this.tabCaffee.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabCaffee.Location = new System.Drawing.Point(-28, -12);
+            this.tabCaffee.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabCaffee.Location = new System.Drawing.Point(1, 3);
             this.tabCaffee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabCaffee.Name = "tabCaffee";
             this.tabCaffee.SelectedIndex = 0;
@@ -325,11 +325,11 @@
             // tabPage1
             // 
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(8, 75);
+            this.tabPage1.Location = new System.Drawing.Point(8, 66);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(2024, 1089);
+            this.tabPage1.Size = new System.Drawing.Size(2024, 1098);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bàn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -341,11 +341,11 @@
             this.tabPage3.Controls.Add(this.btntimac);
             this.tabPage3.Controls.Add(this.btnXoatk);
             this.tabPage3.Controls.Add(this.dgvAccout);
-            this.tabPage3.Location = new System.Drawing.Point(8, 75);
+            this.tabPage3.Location = new System.Drawing.Point(8, 66);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage3.Size = new System.Drawing.Size(2024, 1089);
+            this.tabPage3.Size = new System.Drawing.Size(2024, 1098);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Acccout";
             // 
@@ -382,7 +382,7 @@
             this.textBox4.Location = new System.Drawing.Point(393, 450);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(373, 67);
+            this.textBox4.Size = new System.Drawing.Size(373, 58);
             this.textBox4.TabIndex = 1;
             // 
             // textBox3
@@ -391,7 +391,7 @@
             this.textBox3.Location = new System.Drawing.Point(393, 312);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(373, 67);
+            this.textBox3.Size = new System.Drawing.Size(373, 58);
             this.textBox3.TabIndex = 1;
             // 
             // textBox2
@@ -400,7 +400,7 @@
             this.textBox2.Location = new System.Drawing.Point(393, 172);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 67);
+            this.textBox2.Size = new System.Drawing.Size(373, 58);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
@@ -409,7 +409,7 @@
             this.textBox1.Location = new System.Drawing.Point(393, 52);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 67);
+            this.textBox1.Size = new System.Drawing.Size(373, 58);
             this.textBox1.TabIndex = 1;
             // 
             // label4
@@ -418,7 +418,7 @@
             this.label4.Location = new System.Drawing.Point(219, 455);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 61);
+            this.label4.Size = new System.Drawing.Size(140, 52);
             this.label4.TabIndex = 0;
             this.label4.Text = "Type:";
             // 
@@ -428,7 +428,7 @@
             this.label3.Location = new System.Drawing.Point(134, 317);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(275, 61);
+            this.label3.Size = new System.Drawing.Size(236, 52);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mật Khẩu:";
             // 
@@ -438,7 +438,7 @@
             this.label2.Location = new System.Drawing.Point(21, 180);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(424, 61);
+            this.label2.Size = new System.Drawing.Size(366, 52);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Đăng Nhập:";
             // 
@@ -448,7 +448,7 @@
             this.label1.Location = new System.Drawing.Point(75, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 61);
+            this.label1.Size = new System.Drawing.Size(304, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Hiển Thị:";
             // 
@@ -456,11 +456,11 @@
             // 
             this.tabPage5.Controls.Add(this.dgvDoanhthu);
             this.tabPage5.Controls.Add(this.panel1);
-            this.tabPage5.Location = new System.Drawing.Point(8, 75);
+            this.tabPage5.Location = new System.Drawing.Point(8, 66);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage5.Size = new System.Drawing.Size(2024, 1089);
+            this.tabPage5.Size = new System.Drawing.Size(2024, 1098);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -477,51 +477,11 @@
             this.dgvDoanhthu.Location = new System.Drawing.Point(6, 109);
             this.dgvDoanhthu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDoanhthu.Name = "dgvDoanhthu";
+            this.dgvDoanhthu.ReadOnly = true;
             this.dgvDoanhthu.RowHeadersWidth = 51;
             this.dgvDoanhthu.RowTemplate.Height = 24;
             this.dgvDoanhthu.Size = new System.Drawing.Size(2012, 967);
             this.dgvDoanhthu.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.btnThongKe);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Location = new System.Drawing.Point(-6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2030, 92);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Location = new System.Drawing.Point(723, 16);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(190, 55);
-            this.btnThongKe.TabIndex = 1;
-            this.btnThongKe.Text = "button1";
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(939, -1);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(697, 67);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // accountBindingSource2
-            // 
-            this.accountBindingSource2.DataMember = "Account";
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataMember = "Account";
-            // 
-            // taiKhoanTableAdapter1
-            // 
-            this.taiKhoanTableAdapter1.ClearBeforeFill = true;
             // 
             // Column1
             // 
@@ -558,18 +518,64 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 200;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.btnThongKe);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Location = new System.Drawing.Point(-6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2030, 92);
+            this.panel1.TabIndex = 1;
+            // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(38, 8);
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(1183, 26);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(647, 67);
+            this.dateTimePicker2.Size = new System.Drawing.Size(257, 40);
             this.dateTimePicker2.TabIndex = 2;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Location = new System.Drawing.Point(627, 8);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(339, 71);
+            this.btnThongKe.TabIndex = 1;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(129, 26);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(257, 40);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // accountBindingSource2
+            // 
+            this.accountBindingSource2.DataMember = "Account";
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "Account";
+            // 
+            // taiKhoanTableAdapter1
+            // 
+            this.taiKhoanTableAdapter1.ClearBeforeFill = true;
             // 
             // frmQuanLY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1983, 1050);
+            this.ClientSize = new System.Drawing.Size(1632, 798);
             this.Controls.Add(this.tabCaffee);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQuanLY";

@@ -1,4 +1,4 @@
-namespace QuanLyHightLandsCofffe.DAL.Entities
+﻿namespace QuanLyHightLandsCofffe.DAL.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -28,12 +28,19 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
 
         public int status { get; set; }
 
-        public virtual TableFood TableFood { get; set; }
+       
+        
+        
+    
+
+    public virtual TableFood TableFood { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillInfo> BillInfoes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+
+        
     }
 }

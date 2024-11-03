@@ -11,7 +11,7 @@ namespace QuanLyHightLandsCofffe.BUS
     {
         Model1 context = new Model1();
         private static TableFoodService instance;
-
+        public event Action<TableFood> TableUpdated; // Khai báo sự kiện
         public static TableFoodService Instance
         {
             get
@@ -83,7 +83,16 @@ namespace QuanLyHightLandsCofffe.BUS
             {
                 table.status = status;
                 context.SaveChanges();
+                // Gọi sự kiện khi trạng thái bàn được cập nhật
+                TableUpdated?.Invoke(table); // Kiểm tra xem có người đăng ký không và gọi sự kiện
             }
+        }
+
+        // Phương thức mới
+        public string GetTableNameById(int id)
+        {
+            var table = context.TableFoods.Find(id);
+            return table != null ? table.Ten : null; // Trả về tên bàn hoặc null nếu không tìm thấy
         }
     }
 }

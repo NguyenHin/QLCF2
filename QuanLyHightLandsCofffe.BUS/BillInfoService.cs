@@ -48,10 +48,11 @@ namespace QuanLyHightLandsCofffe.BUS
 
 
 
-        //Lay chi tiet hos don
-        public List<BillInfo> GetAllBillInfos()
+        // Lấy ID hóa đơn theo ID bàn
+        public int GetBillIdByTableId(int tableId)
         {
-            return context.BillInfoes.ToList();
+            var existingBill = context.Bills.FirstOrDefault(b => b.idTable == tableId && b.status == 0);
+            return existingBill?.id ?? -1; // Trả về -1 nếu không tìm thấy hóa đơn
         }
 
         //Hàm này để lấy thông tin chi tiết của một hóa đơn dựa trên ID của nó.
@@ -67,12 +68,10 @@ namespace QuanLyHightLandsCofffe.BUS
         // Phương thức lấy thông tin chi tiết hóa đơn theo ID hóa đơn và ID món ăn
         public BillInfo GetBillInfoByBillIdAndMenuId(int billId, int menuId)
         {
-            using (var context = new Model1())
-            {
-                return context.BillInfoes
-                              .FirstOrDefault(b => b.idBill == billId && b.idMenu == menuId);
-            }
+            return context.BillInfoes
+                          .FirstOrDefault(b => b.idBill == billId && b.idMenu == menuId);
         }
+
 
         //Cap nhat hoa don
         //public void UpdateBillInfo(int id, int newCount)
@@ -84,17 +83,7 @@ namespace QuanLyHightLandsCofffe.BUS
         //        context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
         //    }
         //}
-        public bool UpdateBillInfo(int id, int newCount)
-        {
-            var billInfo = context.BillInfoes.Find(id);
-            if (billInfo != null)
-            {
-                billInfo.Count = newCount; // Update the new count
-                context.SaveChanges(); // Save changes to the database
-                return true; // Indicate success
-            }
-            return false; // Indicate failure if the item was not found
-        }
+
 
 
         public void DeleteBillInfo(int id)
@@ -135,71 +124,141 @@ namespace QuanLyHightLandsCofffe.BUS
             return totalAmount;
         }
 
-        //public bool CreateBillInfo(int billId, int menuItemId, int quantity)
-        //{
-        //    try
-        //    {
-        //        // Ensure that the referenced Bill exists
-        //        if (!context.Bills.Any(b => b.id == billId))
-        //        {
-        //            Console.WriteLine("Referenced Bill not found.");
-        //            return false;
-        //        }
-
-        //        // Create and add new BillInfo
-        //        var billInfo = new BillInfo
-        //        {
-        //            idBill = billId,
-        //            idMenu = menuItemId, // Sử dụng idMenu thay cho menuItemId
-        //            Count = quantity // Sử dụng Count thay cho quantity
-        //                             // other properties can be set here if needed
-        //        };
-        //        context.BillInfoes.Add(billInfo);
-        //        context.SaveChanges();
-
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error creating BillInfo: {ex.Message}");
-        //        return false;
-        //    }
-        //}
-        public bool CreateBillInfo(int billId, int menuItemId, int quantity)
+        public void RemoveBillInfo(int billId, int menuId)
         {
-            // Kiểm tra xem billId có tồn tại không
-            if (!context.Bills.Any(b => b.id == billId))
+            var billInfo = context.BillInfoes.FirstOrDefault(bi => bi.idBill == billId && bi.idMenu == menuId);
+            if (billInfo != null)
             {
-                Console.WriteLine($"Hóa đơn với ID {billId} không tồn tại.");
-                return false; // Hóa đơn không tồn tại
-            }
-
-            // Kiểm tra xem menuItemId có tồn tại không
-            if (!context.Menus.Any(m => m.id == menuItemId))
-            {
-                Console.WriteLine($"Món ăn với ID {menuItemId} không tồn tại.");
-                return false; // Món ăn không tồn tại
-            }
-
-            var billInfo = new BillInfo
-            {
-                idBill = billId,
-                idMenu = menuItemId,
-                Count = quantity
-            };
-
-            context.BillInfoes.Add(billInfo);
-            try
-            {
+                context.BillInfoes.Remove(billInfo);
                 context.SaveChanges();
-                return true; // Thêm thành công
-            }
-            catch (DbUpdateException ex)
-            {
-                Console.WriteLine($"Lỗi khi thêm món vào hóa đơn: {ex.InnerException?.Message ?? ex.Message}");
-                return false; // Thêm thất bại
             }
         }
+
+        public int CreateBillInfo(int tableId, int menuItemId, int quantity)
+        {
+            using (var transaction = context.Database.BeginTransaction())
+            {
+                try
+                {
+                    // Kiểm tra hóa đơn hiện có cho bàn
+                    var existingBill = context.Bills.FirstOrDefault(b => b.idTable == tableId && b.status == 0);
+                    int billId;
+
+                    if (existingBill != null)
+                    {
+                        billId = existingBill.id; // Nếu hóa đơn đã tồn tại, lấy ID hóa đơn hiện có
+                    }
+                    else
+                    {
+                        // Tạo hóa đơn mới
+                        var bill = new Bill
+                        {
+                            dateCheckin = DateTime.Now,
+                            idTable = tableId,
+                            status = 0 // 0: chưa thanh toán
+                        };
+
+                        context.Bills.Add(bill);
+                        context.SaveChanges(); // Lưu hóa đơn để có ID
+                        billId = bill.id; // Lấy ID hóa đơn mới tạo
+                    }
+
+                    // Kiểm tra món ăn
+                    if (!context.Menus.Any(m => m.id == menuItemId))
+                    {
+                        Console.WriteLine($"Món ăn với ID {menuItemId} không tồn tại.");
+                        return -1; // Trả về -1 nếu món ăn không tồn tại
+                    }
+
+                    // Thêm thông tin hóa đơn
+                    var billInfo = new BillInfo
+                    {
+                        idBill = billId,
+                        idMenu = menuItemId,
+                        Count = quantity
+                    };
+
+                    context.BillInfoes.Add(billInfo);
+                    context.SaveChanges(); // Lưu thay đổi
+
+                    transaction.Commit(); // Cam kết giao dịch
+
+                    Console.WriteLine("Thêm món ăn vào hóa đơn thành công.");
+                    return billId; // Trả về billId
+                }
+                catch (DbUpdateException ex)
+                {
+                    transaction.Rollback(); // Hoàn tác giao dịch
+                    Console.WriteLine($"Lỗi khi thêm món vào hóa đơn: {ex.InnerException?.Message ?? ex.Message}");
+                    return -1;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback(); // Hoàn tác giao dịch
+                    Console.WriteLine($"Lỗi không xác định: {ex.Message}");
+                    return -1;
+                }
+            }
+        }
+
+
+        public void UpdateBillInfo(int billId, int menuId, int count)
+        {
+            // Kiểm tra nếu số lượng là âm và hóa đơn chưa có món nào
+            if (count < 0 && !context.BillInfoes.Any(bi => bi.idBill == billId))
+            {
+                // Nếu chưa có món nào, không cho phép giảm số lượng
+                return; // Hoặc có thể thông báo cho người dùng nếu cần
+            }
+
+            var billInfo = GetBillInfoByBillIdAndMenuId(billId, menuId);
+
+            if (billInfo != null)
+            {
+                int newQuantity = billInfo.Count + count;
+
+                // Nếu số lượng mới <= 0, xóa món khỏi BillInfo
+                if (newQuantity <= 0)
+                {
+                    DeleteBillInfo(billInfo.id); // Xóa khỏi BillInfo
+
+                    // Kiểm tra xem còn món nào trong hóa đơn không
+                    var remainingItems = context.BillInfoes.Where(bi => bi.idBill == billId).ToList();
+                    if (!remainingItems.Any())
+                    {
+                        // Nếu không còn món nào, xóa hóa đơn
+                        var billToDelete = context.Bills.Find(billId);
+                        if (billToDelete != null)
+                        {
+                            context.Bills.Remove(billToDelete);
+                            context.SaveChanges(); // Lưu thay đổi để xóa hóa đơn
+                        }
+                    }
+                }
+                else
+                {
+                    billInfo.Count = newQuantity; // Cập nhật số lượng mới
+                    context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                }
+            }
+            else if (count > 0) // Nếu không tìm thấy BillInfo nhưng count > 0, thêm mới
+            {
+                var billInfoNew = new BillInfo
+                {
+                    idBill = billId,
+                    idMenu = menuId,
+                    Count = count
+                };
+
+                context.BillInfoes.Add(billInfoNew);
+                context.SaveChanges(); // Lưu thay đổi
+            }
+        }
+
+
+
+
+
 
     }
 

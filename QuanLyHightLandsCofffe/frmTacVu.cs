@@ -36,6 +36,7 @@ namespace QuanLyHightLandsCofffe
             LoadCategories(); // Tải danh sách loại món ăn
             LoadDiscountCodes(); // Tải danh sách mã giảm giá
             LoadChangeTable();
+            tableFoodService.TableUpdated += OnTableUpdated; // Đăng ký sự kiện
         }
 
         #region Method
@@ -75,18 +76,42 @@ namespace QuanLyHightLandsCofffe
                 currentSelectedButton.BackColor = currentSelectedButton.Text.Contains("Trống") ? Color.Aqua : Color.LightPink;
             }
 
+            // Lấy ID hóa đơn tương ứng với bàn
+            currentBillId = billService.GetBillIdByTableId(item.id); // Phương thức giả định để lấy ID hóa đơn
+
             if (currentSelectedButton == btn)
             {
                 currentSelectedButton = null;
                 currentBillId = 0;
-                lsBill.Items.Clear();
+                lsBill.Items.Clear(); // Xóa danh sách cũ khi bỏ chọn bàn
             }
             else
             {
                 currentSelectedButton = btn;
                 currentSelectedButton.BackColor = Color.LightGreen;
-                currentBillId = item.id;
-                ShowBill(currentBillId);
+
+                // Hiển thị hóa đơn cho bàn được chọn
+                ShowBill(currentBillId); // Đảm bảo rằng gọi lại hàm này
+            }
+        }
+
+        public void UpdateTableButton(int tableId, Color color)
+        {
+            var tableButton = flpTable.Controls.OfType<Button>().FirstOrDefault(b => (b.Tag as TableFood).id == tableId);
+            if (tableButton != null)
+            {
+                tableButton.BackColor = color; // Cập nhật màu sắc nút bàn
+            }
+        }
+
+        private void OnTableUpdated(TableFood updatedTable)
+        {
+            // Cập nhật trạng thái bàn
+            var tableButton = flpTable.Controls.OfType<Button>().FirstOrDefault(b => (b.Tag as TableFood).id == updatedTable.id);
+            if (tableButton != null)
+            {
+                tableButton.BackColor = updatedTable.status == "Trống" ? Color.Aqua : Color.LightPink;
+                tableButton.Text = $"{updatedTable.Ten}{Environment.NewLine}{updatedTable.status}";
             }
         }
 
@@ -191,49 +216,88 @@ namespace QuanLyHightLandsCofffe
         }
 
 
-      
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    var selectedFood = cmbFood.SelectedItem as DAL.Entities.Menu;
+        //    int count = (int)nmFoodCount.Value;
+
+        //    if (selectedFood != null)
+        //    {
+        //        var selectedTableFood = currentSelectedButton.Tag as TableFood;
+        //        if (selectedTableFood != null)
+        //        {
+        //            // Gọi hàm CreateBillInfo và nhận giá trị billId trả về
+        //            int resultBillId = billInfoService.CreateBillInfo(selectedTableFood.id, selectedFood.id, count);
+
+        //            // Kiểm tra kết quả trả về
+        //            if (resultBillId > 0)
+        //            {
+        //                currentBillId = resultBillId; // Cập nhật currentBillId
+        //                MessageBox.Show("Thêm món ăn vào hóa đơn thành công.");
+        //                // Cập nhật trạng thái bàn
+        //                tableFoodService.UpdateTableStatus(selectedTableFood.id, "Có người");
+        //                currentSelectedButton.BackColor = Color.LightPink; // Màu cho bàn có người
+        //                LoadTable();
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Thêm món ăn vào hóa đơn thất bại.");
+        //            }
+
+        //            ShowBill(currentBillId); // Cập nhật lại danh sách hóa đơn
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Không tìm thấy thông tin bàn.");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng chọn món ăn.");
+        //    }
+        //}
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var selectedFood = cmbFood.SelectedItem as DAL.Entities.Menu;
             int count = (int)nmFoodCount.Value;
-            Console.WriteLine($"currentBillId: {currentBillId}, selectedFoodId: {selectedFood?.id}");
 
             if (selectedFood != null)
             {
-                // Kiểm tra nếu hóa đơn chưa được tạo
-                if (currentBillId <= 0)
+                var selectedTableFood = currentSelectedButton.Tag as TableFood;
+                if (selectedTableFood != null)
                 {
-                    CreateBill();
-                }
-
-                // Kiểm tra xem hóa đơn đã tồn tại
-                if (currentBillId > 0)
-                {
-                    var existingBillInfo = billInfoService.GetBillInfoByBillIdAndMenuId(currentBillId, selectedFood.id);
-                    if (existingBillInfo != null)
+                    // Kiểm tra nếu có hóa đơn hiện tại
+                    if (currentBillId == 0) // Nếu chưa có hóa đơn
                     {
-                        // Nếu món đã có, cập nhật số lượng
-                        billInfoService.UpdateBillInfo(existingBillInfo.id, existingBillInfo.Count + count);
-                    }
-                    else
-                    {
-                        // Nếu món chưa có, thêm món mới vào hóa đơn
-                        if (billInfoService.CreateBillInfo(currentBillId, selectedFood.id, count))
+                        // Tạo hóa đơn mới
+                        currentBillId = billInfoService.CreateBillInfo(selectedTableFood.id, selectedFood.id, count);
+                        if (currentBillId > 0)
                         {
-                            MessageBox.Show("Thêm món ăn vào hóa đơn thành công.");
+                            MessageBox.Show("Tạo hóa đơn mới thành công.");
                         }
                         else
                         {
-                            MessageBox.Show("Thêm món ăn vào hóa đơn thất bại.");
+                            MessageBox.Show("Không thể tạo hóa đơn mới.");
+                            return; // Kết thúc hàm nếu không tạo được hóa đơn
                         }
                     }
+                    else
+                    {
+                        // Cập nhật thông tin hóa đơn
+                        billInfoService.UpdateBillInfo(currentBillId, selectedFood.id, count);
+                    }
 
-                    ShowBill(currentBillId); // Cập nhật lại danh sách hóa đơn
+                    // Cập nhật lại danh sách hóa đơn
+                    ShowBill(currentBillId); // Gọi lại để hiển thị lại danh sách hóa đơn
+
+                    // Cập nhật trạng thái bàn
+                    tableFoodService.UpdateTableStatus(selectedTableFood.id, "Có người");
+                    currentSelectedButton.BackColor = Color.LightPink; // Màu cho bàn có người
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tạo hóa đơn.");
+                    MessageBox.Show("Không tìm thấy thông tin bàn.");
                 }
             }
             else
@@ -242,48 +306,13 @@ namespace QuanLyHightLandsCofffe
             }
         }
 
-        private void CreateBill()
-        {
-            var selectedTable = currentSelectedButton.Tag as TableFood;
-            if (selectedTable != null)
-            {
-                // Kiểm tra xem bàn ăn đã có hóa đơn chưa
-                if (billService.GetBillsByStatus(0).Any(b => b.idTable == selectedTable.id))
-                {
-                    MessageBox.Show("Bàn này đã có hóa đơn chưa thanh toán.");
-                    return; // Không tạo hóa đơn mới nếu đã có hóa đơn chưa thanh toán
-                }
 
-                currentBillId = billService.CreateBill(selectedTable.id);
-                if (currentBillId <= 0)
-                {
-                    MessageBox.Show("Lỗi khi tạo hóa đơn cho bàn ăn.");
-                }
-            }
-        }
-        //private void CreateBillForTable(int tableId)
-        //{
-        //    try
-        //    {
-        //        // Tạo hóa đơn mới cho bàn và lấy ID hóa đơn
-        //        currentBillId = billService.CreateBill(tableId);
 
-        //        // Kiểm tra xem hóa đơn đã được tạo thành công
-        //        if (currentBillId <= 0)
-        //        {
-        //            MessageBox.Show("Bàn đã có hóa đơn chưa thanh toán.");
-        //        }
-        //        else
-        //        {
-        //            // Cập nhật trạng thái bàn nếu hóa đơn được tạo thành công
-        //            tableFoodService.UpdateTableStatus(tableId, "Có người");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Lỗi khi tạo hóa đơn: {ex.Message}");
-        //    }
-        //}
+
+
+
+
+
 
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
@@ -297,31 +326,48 @@ namespace QuanLyHightLandsCofffe
             if (selectedTable == null) return;
 
             int newTableId = (int)cmbChangeTable.SelectedValue;
+
+            // Lấy ID hóa đơn của bàn hiện tại
+            int oldBillId = currentBillId;
+
             if (MessageBox.Show($"Bạn có muốn chuyển bàn {selectedTable.Ten} đến bàn {newTableId}?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                // Lưu thông tin của bàn cũ
-                var oldTable = tableFoodService.GetTableById(selectedTable.id);
+                // Chuyển hóa đơn từ bàn cũ sang bàn mới
+                if (oldBillId > 0)
+                {
+                    billService.ChangeTable(oldBillId, newTableId);
+                }
 
-                // Thực hiện chuyển bàn
-                billService.ChangeTable(currentBillId, newTableId);
+                // Cập nhật trạng thái cho bàn cũ
+                tableFoodService.UpdateTableStatus(selectedTable.id, "Trống"); // Bàn cũ trở thành trống
+                currentSelectedButton.BackColor = Color.Aqua; // Đặt màu cho bàn cũ
 
-                // Cập nhật màu sắc cho bàn cũ
-                currentSelectedButton.BackColor = (oldTable.status == "Trống") ? Color.Aqua : Color.LightPink;
-
-                // Cập nhật bàn mới
+                // Cập nhật trạng thái cho bàn mới
                 var newTableButton = flpTable.Controls.OfType<Button>().FirstOrDefault(b => (b.Tag as TableFood).id == newTableId);
                 if (newTableButton != null)
                 {
-                    newTableButton.BackColor = Color.LightGreen; // Màu nền mới cho bàn đã chọn
+                    newTableButton.BackColor = Color.LightPink; // Bàn mới có hóa đơn
+                    var newTable = tableFoodService.GetTableById(newTableId);
+                    if (newTable != null)
+                    {
+                        newTable.status = "Có người"; // Cập nhật trạng thái của bàn mới
+                        tableFoodService.UpdateTable(newTableId, newTable); // Gọi phương thức cập nhật trạng thái bàn
+                    }
                 }
 
-                currentSelectedButton = null; // Bỏ chọn bàn
-                currentBillId = 0; // Reset ID hóa đơn
-                lsBill.Items.Clear(); // Xóa danh sách hóa đơn
-                LoadTable(); // Tải lại danh sách bàn
+                // Reset ID hóa đơn và danh sách hóa đơn
+                currentBillId = 0;
+                lsBill.Items.Clear();
+
+                // Tải lại danh sách bàn và cập nhật ComboBox
+                LoadTable();
+                LoadChangeTable();
+
                 MessageBox.Show("Đã chuyển bàn thành công.");
             }
         }
+
+
 
         void LoadChangeTable()
         {
@@ -333,17 +379,32 @@ namespace QuanLyHightLandsCofffe
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (currentBillId > 0)
+            // Kiểm tra xem có hóa đơn cho bàn hiện tại không
+            if (currentBillId <= 0)
             {
-                frmHoaDon hoaDonForm = new frmHoaDon(currentBillId, currentDiscount); // Truyền mã giảm giá hiện tại
-                hoaDonForm.ShowDialog();
+                MessageBox.Show("Bàn này chưa có hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu không có hóa đơn
             }
-            else
+
+            // Kiểm tra lại xem hóa đơn có tồn tại không trước khi mở frmHoaDon
+            var bill = billService.GetBillById(currentBillId);
+            if (bill == null)
             {
-                MessageBox.Show("Vui lòng chọn bàn và tạo hóa đơn trước.");
+                MessageBox.Show("Hóa đơn đã bị xóa hoặc không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu hóa đơn không tồn tại
+            }
+
+            // Lấy bàn hiện tại
+            var selectedTable = currentSelectedButton.Tag as TableFood;
+            if (selectedTable != null)
+            {
+                frmHoaDon hoaDonForm = new frmHoaDon(currentBillId, currentDiscount, selectedTable, this); // Truyền mã giảm giá và bàn hiện tại
+                hoaDonForm.ShowDialog();
             }
         }
 
         #endregion
+
+        
     }
 }

@@ -15,6 +15,7 @@ namespace QuanLyHightLandsCofffe
     public partial class frmHoaDon : Form
     {
         private int billId; // Store the bill ID
+        private int currentBillId; // Khai báo currentBillId
         private readonly BillService billService = BillService.Instance; // Singleton instance of BillService
         private readonly MenuService menuService = MenuService.Instance; // Singleton instance of BillService
         private readonly BillInfoService billInfoService = BillInfoService.Instance; // Singleton instance of BillInfoService
@@ -22,16 +23,31 @@ namespace QuanLyHightLandsCofffe
         private readonly TableFoodService tableFoodService = TableFoodService.Instance; // Singleton instance of BillInfoService
         
         private Promotion currentDiscount; // Lưu mã giảm giá hiện tại
+        private frmTacVu ownerForm; // Tham chiếu đến frmTacVu
+        private TableFood currentTable; // Declare currentTable as a member variable
+
         public double TotalAmount { get; private set; }
         public string CheckInDate { get; private set; }
         public string DiscountCode { get; private set; }
-        public frmHoaDon(int billId, Promotion discount)
+        public frmHoaDon(int billId, Promotion discount, TableFood table, frmTacVu owner)
         {
             InitializeComponent();
             this.billId = billId; // Store the provided bill ID
             this.currentDiscount = discount; // Lưu mã giảm giá hiện tại
             LoadBillDetails(billId); // Load the bill details
+            this.currentTable = table; // Assign the current table
+            this.ownerForm = owner; // Gán owner
+            this.currentBillId = billId; // Gán giá trị cho currentBillId
+            tableFoodService.TableUpdated += OnTableUpdated;
+        }
 
+        private void OnTableUpdated(TableFood updatedTable)
+        {
+            if (updatedTable.id == currentTable.id)
+            {
+                // Cập nhật giao diện trong frmTacVu nếu bàn này được cập nhật
+                ownerForm.UpdateTableButton(updatedTable.id, Color.Aqua);
+            }
         }
 
         private void LoadBillDetails(int billId)
@@ -39,6 +55,9 @@ namespace QuanLyHightLandsCofffe
             var bill = billService.GetBillById(billId); // Lấy thông tin hóa đơn
             if (bill != null)
             {
+                // Set currentTable from the bill
+                currentTable = tableFoodService.GetTableById(bill.idTable);
+
                 txtBan.Text = bill.idTable.ToString(); // Hiển thị số bàn
                 txtNgay.Text = bill.dateCheckin.ToString("dd/MM/yyyy"); // Hiển thị ngày check-in
 
@@ -97,58 +116,33 @@ namespace QuanLyHightLandsCofffe
             return total;
         }
 
-        private TableFood currentTable; // Biến này lưu thông tin bàn hiện tại
+
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            // Lấy thông tin từ các trường
-            TotalAmount = double.Parse(txtTong.Text.Replace("đ", "").Trim());
-            CheckInDate = txtNgay.Text;
-            DiscountCode = txtGiamgia.Text;
 
-            // Tạo đối tượng để lưu thông tin hóa đơn
-            var billSummary = new
+            if (currentBillId > 0)
             {
-                TableName = this.Owner is frmTacVu parentForm ?
-                            (parentForm.Controls.Find("btn" + txtBan.Text, true).FirstOrDefault() as Button)?.Text ?? "Không xác định" :
-                            "Không xác định",
-                TotalAmount,
-                CheckInDate,
-                CheckOutDate = DateTime.Now.ToString("dd/MM/yyyy"),
-                DiscountCode
-            };
-
-            // Lấy đối tượng cha
-            var parent = this.Owner as frmQuanLY;
-            if (parent != null)
-            {
-                parent.AddBillSummary(billSummary); // Gọi phương thức thêm hóa đơn
+                billService.ConfirmBill(currentBillId);
+                MessageBox.Show("Hóa đơn đã được xác nhận.");
+                tableFoodService.UpdateTableStatus(currentTable.id, "Trống");
+                ownerForm.UpdateTableButton(currentTable.id, Color.Aqua);
             }
 
-            // Cập nhật trạng thái bàn
-            if (currentTable != null)
-            {
-                tableFoodService.UpdateTableStatus(currentTable.id, "Trống"); // Cập nhật trạng thái bàn
 
-                // Thay đổi màu sắc của nút bàn
-                var selectedButton = parent.Controls.Find("btn" + currentTable.id, true).FirstOrDefault() as Button; // Tìm nút tương ứng với bàn
-                if (selectedButton != null)
-                {
-                    selectedButton.BackColor = Color.Aqua; // Đặt màu cho bàn trống
-                }
-            }
+            MessageBox.Show("Hóa đơn đã thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
 
-            // Xóa hóa đơn và kiểm tra kết quả
-            if (billService.DeleteBill(billId)) // Xóa hóa đơn bằng ID
-            {
-                MessageBox.Show("Hóa đơn đã thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi xảy ra khi xóa hóa đơn. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            this.Close(); // Đóng form hóa đơn sau khi xác nhận
+
+
+        private void btnQuaylai_Click(object sender, EventArgs e)
+        {
+            // Hủy đăng ký sự kiện
+            tableFoodService.TableUpdated -= OnTableUpdated;
+
+            this.Close(); // Đóng form hóa đơn
         }
     }
     
