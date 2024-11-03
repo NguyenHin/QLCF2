@@ -27,6 +27,7 @@
         public int idTable { get; set; }
 
         public int status { get; set; }
+        // boolean true false -> 0, 1
 
        
         
