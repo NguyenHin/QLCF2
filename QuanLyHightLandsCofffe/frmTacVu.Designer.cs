@@ -171,7 +171,6 @@
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(130, 95);
             this.btnPay.TabIndex = 0;
-            this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 

@@ -120,18 +120,20 @@ namespace QuanLyHightLandsCofffe
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
-            if (currentBillId > 0)
+            if (currentBillId >= 0)
             {
-                billService.ConfirmBill(currentBillId);
-                MessageBox.Show("Hóa đơn đã được xác nhận.");
-                tableFoodService.UpdateTableStatus(currentTable.id, "Trống");
-                ownerForm.UpdateTableButton(currentTable.id, Color.Aqua);
+                MessageBox.Show("Hóa đơn đã thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
 
+            billService.ConfirmBill(currentBillId);
+            MessageBox.Show("Hóa đơn đã được xác nhận.");
+            tableFoodService.UpdateTableStatus(currentTable.id, "Trống");
+            ownerForm.UpdateTableButton(currentTable.id, Color.Aqua);
+            // Luu hoa don
 
-            MessageBox.Show("Hóa đơn đã thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+
+            
         }
 
 

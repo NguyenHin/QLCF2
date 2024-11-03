@@ -1,8 +1,11 @@
 ﻿using QuanLyHightLandsCofffe.BUS;
+using QuanLyHightLandsCofffe.DAL.Entities;
 using System;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace QuanLyHightLandsCofffe
@@ -14,7 +17,7 @@ namespace QuanLyHightLandsCofffe
         private readonly TableFoodService tableFoodService = TableFoodService.Instance; // Singleton instance of BillInfoService
         private readonly MenuService menuService = MenuService.Instance; // Singleton instance of BillService
 
-
+        Model1 context = new Model1();
         public frmQuanLY()
         {
             InitializeComponent();
@@ -28,10 +31,36 @@ namespace QuanLyHightLandsCofffe
         private void LoadData()
         {
             // Tải dữ liệu vào bảng 'TaiKhoan'.
-            this.taiKhoanTableAdapter1.Fill(this.qLHightLandsCFDataSet1.TaiKhoan);
 
             // Gán dữ liệu vào DataGridView.
-            dgvDoanhthu.DataSource = this.qLHightLandsCFDataSet1.TaiKhoan;
+            //dgvDoanhthu.DataSource = this.qLHightLandsCFDataSet1.TaiKhoan;
+            try
+            {
+                // Specify date range (could be based on UI elements like DateTimePicker controls)
+                DateTime startDate = dateTimePicker1.Value;
+                DateTime endDate = dateTimePicker2.Value;
+
+                // Load bills within the specified date range
+                var bills = context.Bills
+                    .Where(b => b.status == 1
+                                && DbFunctions.TruncateTime(b.dateCheckin) >= DbFunctions.TruncateTime(startDate)
+                                && DbFunctions.TruncateTime(b.dateCheckOut) <= DbFunctions.TruncateTime(endDate))
+                    .Select(b => new
+                    {
+                        b.id,
+                        b.status,
+                        EntryDate = b.dateCheckin,
+                        ExitDate = b.dateCheckOut
+                    })
+                    .ToList();
+
+                // Bind data to DataGridView
+                dgvDoanhthu.DataSource = bills;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btntimac_Click(object sender, EventArgs e)
@@ -105,17 +134,7 @@ namespace QuanLyHightLandsCofffe
             }
         }
 
-        public void AddBillSummary(dynamic billSummary)
-        {
-            // Thêm thông tin hóa đơn vào DataGridView
-            dgvDoanhthu.Rows.Add(
-                billSummary.TableName,
-                billSummary.TotalAmount,
-                billSummary.CheckInDate,
-                billSummary.CheckOutDate,
-                billSummary.DiscountCode
-            );
-        }
+        
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {

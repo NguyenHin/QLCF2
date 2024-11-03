@@ -298,11 +298,11 @@
             // 
             this.tabPage2.Controls.Add(this.dgvACcount);
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(8, 75);
+            this.tabPage2.Location = new System.Drawing.Point(8, 66);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(2024, 1089);
+            this.tabPage2.Size = new System.Drawing.Size(2024, 1098);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Menu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -474,7 +474,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvDoanhthu.Location = new System.Drawing.Point(6, 109);
+            this.dgvDoanhthu.Location = new System.Drawing.Point(4, 95);
             this.dgvDoanhthu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDoanhthu.Name = "dgvDoanhthu";
             this.dgvDoanhthu.ReadOnly = true;
@@ -488,6 +488,7 @@
             this.Column1.HeaderText = "Tên bàn";
             this.Column1.MinimumWidth = 10;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 200;
             // 
             // Column2
@@ -495,6 +496,7 @@
             this.Column2.HeaderText = "Tổng tiền";
             this.Column2.MinimumWidth = 10;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 200;
             // 
             // Column3
@@ -502,6 +504,7 @@
             this.Column3.HeaderText = "Ngày vào";
             this.Column3.MinimumWidth = 10;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
             // Column4
@@ -509,6 +512,7 @@
             this.Column4.HeaderText = "Ngày ra";
             this.Column4.MinimumWidth = 10;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 200;
             // 
             // Column5
@@ -516,6 +520,7 @@
             this.Column5.HeaderText = "Giảm giá";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 200;
             // 
             // panel1

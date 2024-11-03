@@ -134,7 +134,7 @@ namespace QuanLyHightLandsCofffe.BUS
             }
         }
 
-        public int CreateBillInfo(int tableId, int menuItemId, int quantity)
+        public int CreateBillInfo(int tableId, int menuItemId, int promotionId, int quantity)
         {
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -175,6 +175,7 @@ namespace QuanLyHightLandsCofffe.BUS
                     {
                         idBill = billId,
                         idMenu = menuItemId,
+                        idPromotion = promotionId,
                         Count = quantity
                     };
 

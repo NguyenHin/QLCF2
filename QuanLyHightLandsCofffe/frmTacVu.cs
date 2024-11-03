@@ -271,7 +271,7 @@ namespace QuanLyHightLandsCofffe
                     if (currentBillId == 0) // Nếu chưa có hóa đơn
                     {
                         // Tạo hóa đơn mới
-                        currentBillId = billInfoService.CreateBillInfo(selectedTableFood.id, selectedFood.id, count);
+                        currentBillId = billInfoService.CreateBillInfo(selectedTableFood.id, selectedFood.id, currentDiscount.id,  count);
                         if (currentBillId > 0)
                         {
                             MessageBox.Show("Tạo hóa đơn mới thành công.");
