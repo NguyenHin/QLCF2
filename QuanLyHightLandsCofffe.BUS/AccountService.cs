@@ -48,16 +48,17 @@ namespace QuanLyHightLandsCofffe.BUS
         }
 
 
-        // Cập nhật tài khoản
-        //public void UpdatePassword(string userName, string newPassword)
-        //{
-        //    var account = GetAccountByUserName(userName);
-        //    if (account != null)
-        //    {
-        //        account.PassWord = HashPassword(newPassword);
-        //        context.SaveChanges();
-        //    }
-        //}
+        public void UpdatePassword(string userName, string newPassword)
+        {
+            var account = GetAccountByUserName(userName);
+            if (account != null)
+            {
+                // Mã hóa mật khẩu nếu cần thiết (bạn có thể bỏ qua nếu không muốn mã hóa)
+                // account.PassWord = HashPassword(newPassword);
+                account.PassWord = newPassword; // Chỉ lưu mật khẩu trực tiếp (không mã hóa)
+                context.SaveChanges();
+            }
+        }
 
 
         // Xóa tài khoản
