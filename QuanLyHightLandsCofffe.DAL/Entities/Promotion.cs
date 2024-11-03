@@ -9,6 +9,12 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
     [Table("Promotion")]
     public partial class Promotion
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Promotion()
+        {
+            Bills = new HashSet<Bill>();
+        }
+
         public int id { get; set; }
 
         [Required]
@@ -21,6 +27,7 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
 
         public DateTime EndDate { get; set; }
 
-        public virtual ICollection<BillInfo> BillInfoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bill> Bills { get; set; }
     }
 }

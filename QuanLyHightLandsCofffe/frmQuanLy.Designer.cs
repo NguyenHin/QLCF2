@@ -67,11 +67,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgvDoanhthu = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnThongKe = new System.Windows.Forms.Button();
@@ -79,6 +74,22 @@
             this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taiKhoanTableAdapter1 = new QuanLyHightLandsCofffe.QLHightLandsCFDataSet1TableAdapters.TaiKhoanTableAdapter();
+            this.qLCF_4DataSet = new QuanLyHightLandsCofffe.QLCF_4DataSet();
+            this.qLCF4DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.billTableAdapter = new QuanLyHightLandsCofffe.QLCF_4DataSetTableAdapters.BillTableAdapter();
+            this.promotionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.promotionTableAdapter = new QuanLyHightLandsCofffe.QLCF_4DataSetTableAdapters.PromotionTableAdapter();
+            this.billBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCheckinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCheckOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHightLandsCFDataSet1)).BeginInit();
@@ -96,6 +107,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCF_4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCF4DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.promotionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTimm
@@ -467,14 +483,22 @@
             // 
             // dgvDoanhthu
             // 
+            this.dgvDoanhthu.AllowUserToDeleteRows = false;
+            this.dgvDoanhthu.AllowUserToOrderColumns = true;
+            this.dgvDoanhthu.AutoGenerateColumns = false;
             this.dgvDoanhthu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoanhthu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dgvDoanhthu.Location = new System.Drawing.Point(4, 95);
+            this.TenBan,
+            this.TongTien,
+            this.NgayVao,
+            this.NgayRa,
+            this.GiamGia,
+            this.idDataGridViewTextBoxColumn,
+            this.dateCheckinDataGridViewTextBoxColumn,
+            this.dateCheckOutDataGridViewTextBoxColumn,
+            this.idTableDataGridViewTextBoxColumn});
+            this.dgvDoanhthu.DataSource = this.billBindingSource1;
+            this.dgvDoanhthu.Location = new System.Drawing.Point(-507, 108);
             this.dgvDoanhthu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDoanhthu.Name = "dgvDoanhthu";
             this.dgvDoanhthu.ReadOnly = true;
@@ -482,46 +506,7 @@
             this.dgvDoanhthu.RowTemplate.Height = 24;
             this.dgvDoanhthu.Size = new System.Drawing.Size(2012, 967);
             this.dgvDoanhthu.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tên bàn";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tổng tiền";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Ngày vào";
-            this.Column3.MinimumWidth = 10;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày ra";
-            this.Column4.MinimumWidth = 10;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Giảm giá";
-            this.Column5.MinimumWidth = 10;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 200;
+            this.dgvDoanhthu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoanhthu_CellContentClick);
             // 
             // panel1
             // 
@@ -538,14 +523,14 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(1183, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(402, 26);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(257, 40);
             this.dateTimePicker2.TabIndex = 2;
             // 
             // btnThongKe
             // 
-            this.btnThongKe.Location = new System.Drawing.Point(627, 8);
+            this.btnThongKe.Location = new System.Drawing.Point(835, 8);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(339, 71);
@@ -575,6 +560,115 @@
             // taiKhoanTableAdapter1
             // 
             this.taiKhoanTableAdapter1.ClearBeforeFill = true;
+            // 
+            // qLCF_4DataSet
+            // 
+            this.qLCF_4DataSet.DataSetName = "QLCF_4DataSet";
+            this.qLCF_4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qLCF4DataSetBindingSource
+            // 
+            this.qLCF4DataSetBindingSource.DataSource = this.qLCF_4DataSet;
+            this.qLCF4DataSetBindingSource.Position = 0;
+            // 
+            // TenBan
+            // 
+            this.TenBan.HeaderText = "Tên bàn";
+            this.TenBan.MinimumWidth = 10;
+            this.TenBan.Name = "TenBan";
+            this.TenBan.ReadOnly = true;
+            this.TenBan.Width = 200;
+            // 
+            // TongTien
+            // 
+            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.MinimumWidth = 10;
+            this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
+            this.TongTien.Width = 200;
+            // 
+            // NgayVao
+            // 
+            this.NgayVao.HeaderText = "Ngày vào";
+            this.NgayVao.MinimumWidth = 10;
+            this.NgayVao.Name = "NgayVao";
+            this.NgayVao.ReadOnly = true;
+            this.NgayVao.Width = 200;
+            // 
+            // NgayRa
+            // 
+            this.NgayRa.HeaderText = "Ngày ra";
+            this.NgayRa.MinimumWidth = 10;
+            this.NgayRa.Name = "NgayRa";
+            this.NgayRa.ReadOnly = true;
+            this.NgayRa.Width = 200;
+            // 
+            // GiamGia
+            // 
+            this.GiamGia.HeaderText = "Giảm giá";
+            this.GiamGia.MinimumWidth = 10;
+            this.GiamGia.Name = "GiamGia";
+            this.GiamGia.ReadOnly = true;
+            this.GiamGia.Width = 200;
+            // 
+            // billBindingSource
+            // 
+            this.billBindingSource.DataMember = "Bill";
+            this.billBindingSource.DataSource = this.qLCF4DataSetBindingSource;
+            // 
+            // billTableAdapter
+            // 
+            this.billTableAdapter.ClearBeforeFill = true;
+            // 
+            // promotionBindingSource
+            // 
+            this.promotionBindingSource.DataMember = "Promotion";
+            this.promotionBindingSource.DataSource = this.qLCF4DataSetBindingSource;
+            // 
+            // promotionTableAdapter
+            // 
+            this.promotionTableAdapter.ClearBeforeFill = true;
+            // 
+            // billBindingSource1
+            // 
+            this.billBindingSource1.DataMember = "Bill";
+            this.billBindingSource1.DataSource = this.qLCF4DataSetBindingSource;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // dateCheckinDataGridViewTextBoxColumn
+            // 
+            this.dateCheckinDataGridViewTextBoxColumn.DataPropertyName = "dateCheckin";
+            this.dateCheckinDataGridViewTextBoxColumn.HeaderText = "dateCheckin";
+            this.dateCheckinDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.dateCheckinDataGridViewTextBoxColumn.Name = "dateCheckinDataGridViewTextBoxColumn";
+            this.dateCheckinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateCheckinDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // dateCheckOutDataGridViewTextBoxColumn
+            // 
+            this.dateCheckOutDataGridViewTextBoxColumn.DataPropertyName = "dateCheckOut";
+            this.dateCheckOutDataGridViewTextBoxColumn.HeaderText = "dateCheckOut";
+            this.dateCheckOutDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.dateCheckOutDataGridViewTextBoxColumn.Name = "dateCheckOutDataGridViewTextBoxColumn";
+            this.dateCheckOutDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateCheckOutDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // idTableDataGridViewTextBoxColumn
+            // 
+            this.idTableDataGridViewTextBoxColumn.DataPropertyName = "idTable";
+            this.idTableDataGridViewTextBoxColumn.HeaderText = "idTable";
+            this.idTableDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.idTableDataGridViewTextBoxColumn.Name = "idTableDataGridViewTextBoxColumn";
+            this.idTableDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTableDataGridViewTextBoxColumn.Width = 200;
             // 
             // frmQuanLY
             // 
@@ -606,6 +700,11 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCF_4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCF4DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.promotionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,11 +755,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDangNhapDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.BindingSource qLCF4DataSetBindingSource;
+        private QLCF_4DataSet qLCF_4DataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayVao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayRa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
+        private System.Windows.Forms.BindingSource billBindingSource;
+        private QLCF_4DataSetTableAdapters.BillTableAdapter billTableAdapter;
+        private System.Windows.Forms.BindingSource promotionBindingSource;
+        private QLCF_4DataSetTableAdapters.PromotionTableAdapter promotionTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCheckinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCheckOutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTableDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource billBindingSource1;
     }
 }

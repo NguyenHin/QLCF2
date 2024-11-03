@@ -22,9 +22,16 @@ namespace QuanLyHightLandsCofffe
         {
             InitializeComponent();
         }
+        private void BindGrid()
+        {
 
+        }
         private void frmQuanLY_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLCF_4DataSet.Promotion' table. You can move, or remove it, as needed.
+            this.promotionTableAdapter.Fill(this.qLCF_4DataSet.Promotion);
+            // TODO: This line of code loads data into the 'qLCF_4DataSet.Bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.qLCF_4DataSet.Bill);
             LoadData();
         }
 
@@ -53,7 +60,24 @@ namespace QuanLyHightLandsCofffe
                         ExitDate = b.dateCheckOut
                     })
                     .ToList();
+                var bills = (
+                    from  b in context.Bills
+                    join p in context.Promotions on b.idPromotion equals p.id
+                    where (b.status == 1
+                                && DbFunctions.TruncateTime(b.dateCheckin) >= DbFunctions.TruncateTime(startDate)
+                                && DbFunctions.TruncateTime(b.dateCheckOut) <= DbFunctions.TruncateTime(endDate))
+                    select { b.id, b.dateCheckin, b.dateCheckOut, p.name}).
+                                
+                // Tạo DataTable để lưu kết quả
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Ngay", typeof(DateTime));
+                dt.Columns.Add("TongTien", typeof(decimal));
 
+                // Chuyển đổi kết quả truy vấn sang DataTable
+                foreach (var item in bills)
+                {
+                    dt.Rows.Add(item.Ngay, item.TongTien);
+                }
                 // Bind data to DataGridView
                 dgvDoanhthu.DataSource = bills;
             }
@@ -139,6 +163,11 @@ namespace QuanLyHightLandsCofffe
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dgvDoanhthu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

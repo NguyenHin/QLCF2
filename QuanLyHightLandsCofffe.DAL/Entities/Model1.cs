@@ -29,7 +29,6 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
             // Thuộc tính tĩnh để lưu trữ tên đăng nhập của người dùng hiện tại
             public static string CurrentUserName { get; set; }
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
@@ -75,6 +74,11 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
                 .WithRequired(e => e.Menu)
                 .HasForeignKey(e => e.FoodId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Promotion>()
+                .HasMany(e => e.Bills)
+                .WithOptional(e => e.Promotion)
+                .HasForeignKey(e => e.idPromotion);
 
             modelBuilder.Entity<Staff>()
                 .HasMany(e => e.Waitstaffs)

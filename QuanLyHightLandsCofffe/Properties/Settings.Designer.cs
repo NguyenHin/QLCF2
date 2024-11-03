@@ -44,5 +44,16 @@ namespace QuanLyHightLandsCofffe.Properties {
                 return ((string)(this["QLHightLandsCFConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THCF0C\\SQLEXPRESS;Initial Catalog=QLCF_4;Integrated Security=True;Enc" +
+            "rypt=True;TrustServerCertificate=True")]
+        public string QLCF_4ConnectionString {
+            get {
+                return ((string)(this["QLCF_4ConnectionString"]));
+            }
+        }
     }
 }

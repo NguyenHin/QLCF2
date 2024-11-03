@@ -28,12 +28,14 @@ namespace QuanLyHightLandsCofffe.BUS
         }
 
         // Phương thức để lưu hóa đơn
-        public void ConfirmBill(int billId)
+        public void ConfirmBill(int billId, int promotionId)
         {
             var bill = context.Bills.Find(billId);
             if (bill != null)
             {
                 bill.status = 1; // Đặt trạng thái là đã thanh toán
+                bill.dateCheckOut = DateTime.Now;
+                bill.idPromotion = promotionId;
                 context.SaveChanges();
             }
         }

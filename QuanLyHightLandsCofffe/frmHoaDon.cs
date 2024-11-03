@@ -126,14 +126,10 @@ namespace QuanLyHightLandsCofffe
                 this.Close();
             }
 
-            billService.ConfirmBill(currentBillId);
+            billService.ConfirmBill(currentBillId, currentDiscount.id);
             MessageBox.Show("Hóa đơn đã được xác nhận.");
             tableFoodService.UpdateTableStatus(currentTable.id, "Trống");
             ownerForm.UpdateTableButton(currentTable.id, Color.Aqua);
-            // Luu hoa don
-
-
-            
         }
 
 

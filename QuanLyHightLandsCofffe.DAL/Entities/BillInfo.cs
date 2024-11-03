@@ -15,15 +15,10 @@ namespace QuanLyHightLandsCofffe.DAL.Entities
 
         public int idMenu { get; set; }
 
-        [Column("idPromotion")]
-        public int idPromotion { get; set; }
-
         public int Count { get; set; }
 
         public virtual Bill Bill { get; set; }
 
         public virtual Menu Menu { get; set; }
-
-        public virtual Promotion Promotion { get; set; }
     }
 }

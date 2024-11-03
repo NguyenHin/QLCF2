@@ -175,7 +175,7 @@ namespace QuanLyHightLandsCofffe.BUS
                     {
                         idBill = billId,
                         idMenu = menuItemId,
-                        idPromotion = promotionId,
+                       
                         Count = quantity
                     };
 

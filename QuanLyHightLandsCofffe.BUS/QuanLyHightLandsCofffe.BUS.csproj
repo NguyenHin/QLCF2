@@ -54,6 +54,7 @@
     <Compile Include="MenuService.cs" />
     <Compile Include="FoodCategoryService.cs" />
     <Compile Include="PromotionServicecs.cs" />
+    <Compile Include="RevenueService.cs" />
     <Compile Include="TableFoodService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
